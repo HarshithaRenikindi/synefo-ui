@@ -1,0 +1,195 @@
+.create-invoice-container {
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 22px;
+  border: 2px solid transparent;
+  min-height: 480px;
+  .stepar-content {
+    width: 100%;
+    height: 90%;
+    display: block;
+    margin-top: 15px;
+
+    .steper-label {
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 500;
+      color: #383874;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .steper-button {
+      //   padding: 0;
+      width: 150px;
+      .css-vnkopk-MuiStepLabel-iconContainer {
+        padding-right: 0;
+      }
+      .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root {
+        width: 1.3em;
+        height: 1.3em;
+      }
+      .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active {
+        color: #00b929;
+      }
+
+      .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed {
+        color: #00b929;
+      }
+      .css-8je8zh-MuiTouchRipple-root {
+        width: 0;
+      }
+    }
+
+    .css-j5w0w9-MuiStepConnector-root {
+      margin-top: 25px;
+
+      .css-z7uhs0-MuiStepConnector-line {
+        display: block;
+        border-color: #bdbdbd;
+        border-top-style: solid;
+        border-top-width: 3px;
+        margin-right: -68px;
+        margin-left: -75px;
+      }
+
+      &.Mui-completed {
+        .css-z7uhs0-MuiStepConnector-line {
+          border-color: #00b929;
+        }
+      }
+
+      &.Mui-active {
+        .css-z7uhs0-MuiStepConnector-line {
+          border-color: #00b929;
+        }
+      }
+    }
+    .steper-body-content {
+      width: 40%;
+      text-align: center;
+      margin: 0 auto;
+      .users-content {
+        width: 100%;
+        display: block;
+        .form-group {
+          width: 100%;
+          margin-bottom: 15px;
+          .form-label {
+            text-align: left;
+            display: block;
+            font-size: 14px;
+            color: #344054;
+            line-height: 20px;
+            font-weight: 500;
+            margin-bottom: 5px;
+          }
+          .form-control {
+            height: 36px;
+            padding: 5px 15px;
+            margin-right: 15px;
+            border: 1px solid #d0d5dd;
+            background: linear-gradient(0deg, #ffffff, #ffffff);
+            box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+            border-radius: 5px;
+            font-size: 13px;
+            line-height: 26px;
+            font-weight: 400;
+            color: #344054;
+            font-family: "Poppins", sans-serif;
+          }
+          .invoice-select-departmet {
+            width: 100%;
+            .MuiOutlinedInput-root {
+              width: 100%;
+              height: 40px;
+              line-height: 40px;
+
+              .MuiSelect-select {
+                width: 100%;
+                display: block;
+                text-align: left;
+                font-size: 13px;
+                line-height: 40px;
+                height: 36px;
+                font-weight: 400;
+                border-color: #d0d5dd;
+                padding: 0 15px;
+                font-style: normal;
+
+                .MuiSelect-nativeInput {
+                  height: 36px;
+                }
+
+                em {
+                  font-style: normal;
+                }
+
+                &:focus-visible {
+                  outline-color: transparent;
+                }
+
+                &:hover {
+                  border-color: #d0d5dd;
+                }
+              }
+
+              .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon {
+                top: calc(54% - 0.5em);
+              }
+            }
+          }
+          span {
+            text-align: left;
+            display: block;
+            font-size: 12px;
+            line-height: 16px;
+            margin-top: 5px;
+          }
+        }
+        .completed-steper {
+          width: 100%;
+          text-align: center;
+          .completed-content {
+            width: 100%;
+            text-align: center;
+            h4 {
+              font-size: 18px;
+              line-height: 24px;
+              color: #383874;
+              margin-bottom: 10px;
+            }
+            span {
+              font-size: 14px;
+              line-height: 18px;
+              color: #344054;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .create-invoice-container {
+    .stepar-content {
+      .steper-body-content {
+        width: 50%;
+        text-align: center;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 767px) {
+  .create-invoice-container {
+    .stepar-content {
+      .steper-body-content {
+        width: 70%;
+        text-align: center;
+        margin: 0 auto;
+      }
+    }
+  }
+}

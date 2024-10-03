@@ -1,0 +1,81 @@
+Login:
+https://www.figma.com/proto/gsXH45MPpJKqaxwpOLAdbu/AppKube?type=design&node-id=12172-65221&scaling=scale-down-width&page-id=11036%3A61674&starting-point-node-id=12172%3A65221
+
+Dashboad:
+https://www.figma.com/proto/gsXH45MPpJKqaxwpOLAdbu/AppKube?page-id=6795%3A29886&type=design&node-id=7291-22163&viewport=1213%2C2024%2C0.5&scaling=scale-down-width&starting-point-node-id=7047%3A17146
+
+Infra:
+https://www.figma.com/proto/gsXH45MPpJKqaxwpOLAdbu/AppKube-DRS?page-id=12432%3A71156&type=design&node-id=21976-56029&viewport=4194%2C-889%2C0.11&t=PN0yhxCDHRKCrWj8-1&scaling=scale-down-width&starting-point-node-id=21976%3A124846
+
+https://www.figma.com/proto/gsXH45MPpJKqaxwpOLAdbu/AppKube-DRS?page-id=12432%3A71156&type=design&node-id=21976-124846&viewport=9958%2C8732%2C0.55&t=gngbpYONS8Aby9fO-1&scaling=min-zoom&starting-point-node-id=21976%3A124846
+
+Forgot password:
+https://www.figma.com/proto/gsXH45MPpJKqaxwpOLAdbu/AppKube-DRS?page-id=11036%3A61674&type=design&node-id=12172-65221&viewport=5677%2C-7463%2C0.21&t=3GbaAQUZ7XizOqvy-1&scaling=min-zoom&starting-point-node-id=12172%3A65221
+
+MFA: 
+https://www.figma.com/proto/gsXH45MPpJKqaxwpOLAdbu/AppKube-DRS?page-id=11036%3A61674&type=design&node-id=12284-67810&viewport=796%2C-927%2C0.06&t=xUF2v4d1XVdTYFeZ-1&scaling=min-zoom&starting-point-node-id=12284%3A67810
+
+RBAC:
+https://www.figma.com/proto/T1v5T4vk20KfW4rASjo3uM/Appkube-Main-Evn?page-id=12432%3A71156&type=design&node-id=27627-49041&viewport=7318%2C550%2C0.15&t=bSDsygo9JFX12SBz-1&scaling=scale-down-width&starting-point-node-id=27627%3A49041&mode=design
+
+Side Menu
+https://www.figma.com/proto/gsXH45MPpJKqaxwpOLAdbu/AppKube-DRS?page-id=12432%3A71156&type=design&node-id=21976-124846&viewport=9958%2C8732%2C0.55&t=gngbpYONS8Aby9fO-1&scaling=scale-down-width&starting-point-node-id=21976%3A124846
+
+Open API data: 
+https://github.com/AppkubeCloud/appkube-cmdb-service/blob/main/core-service-api/src/main/resources/rest_api.yaml
+
+Security API Collection:
+https://github.com/AppkubeCloud/appkube-architectures-doc/blob/main/postman-collection/security_latest.postman_collection.json
+
+Figma Password
+BeyondSoft
+
+
+EKS explorer:
+https://www.figma.com/proto/mSwpmnkmrqHXX6AkzXzbtC/Aws-Elements?type=design&node-id=12383-64820&t=9Xrymh7JYyOv4TIB-1&scaling=scale-down-width&page-id=12227%3A62321&starting-point-node-id=12455%3A71734
+
+https://www.figma.com/proto/mSwpmnkmrqHXX6AkzXzbtC/Aws-Elements?page-id=12227%3A62321&type=design&node-id=28999-37369&viewport=403%2C10%2C0.14&t=irP2MjCrBvmjMJvJ-1&scaling=scale-down-width&starting-point-node-id=12455%3A71734
+
+ELB/NLB explorer:
+https://www.figma.com/proto/mSwpmnkmrqHXX6AkzXzbtC/Aws-Elements?type=design&amp%3Bnode-id=12252-62320&amp%3Bt=pwdkxRU4L3feUy5a-1&amp%3Bscaling=min-zoom&amp%3Bpage-id=12227%3A62325&amp%3Bstarting-point-node-id=12252%3A62320&amp%3Bmode=design&utm_source=link-unfurl&utm_medium=msft&utm_content=mSwpmnkmrqHXX6AkzXzbtC&utm_product_type=design&node-id=10061-64679&starting-point-node-id=10061%3A64679
+
+EC2 explorer:
+https://www.figma.com/proto/mSwpmnkmrqHXX6AkzXzbtC/Aws-Elements?type=design&node-id=28831-20374&t=Uee7nRyPOKUmYw3X-1&scaling=scale-down-width&page-id=28831%3A14248&starting-point-node-id=28831%3A20374
+
+s3 explorer:
+https://www.figma.com/proto/mSwpmnkmrqHXX6AkzXzbtC/Aws-Elements?type=design&node-id=8288-34673&t=dqlwHSI7g2LowKt4-1&scaling=scale-down-width&page-id=7794%3A35100&starting-point-node-id=8288%3A34673
+
+lambda explorer:
+https://www.figma.com/proto/mSwpmnkmrqHXX6AkzXzbtC/Aws-Elements?type=design&node-id=10603-60789&t=t8tXZyiCvYJJexud-1&scaling=min-zoom&page-id=9401%3A52769&starting-point-node-id=10603%3A60789
+
+reports ui:
+https://www.figma.com/file/gsXH45MPpJKqaxwpOLAdbu/AppKube-DRS?type=design&node-id=26842-23627&mode=design&t=s7Hd0VhLXCCvn4wf-0
+
+BI Mapping:
+https://www.figma.com/proto/mSwpmnkmrqHXX6AkzXzbtC/Aws-Elements?page-id=33683%3A65676&type=design&node-id=33741-91059&viewport=628%2C187%2C0.03&t=G9s1ufU1BSZfHmvk-1&scaling=scale-down-width&starting-point-node-id=33741%3A91059&mode=design
+
+Discovered assets:
+https://www.figma.com/proto/T1v5T4vk20KfW4rASjo3uM/Appkube-Main-Evn?page-id=12432%3A71156&type=design&node-id=31262-49736&viewport=-3051%2C6757%2C0.27&t=8cU2h36ABFdu0icb-1&scaling=scale-down-width&starting-point-node-id=21976%3A124846&mode=design
+
+
+
+Reporting:
+
+Overview Dashboard
+https://www.figma.com/proto/dlkcEDolt9QlU3E7qxB4sC/Reporting-Module-Prototype?page-id=29478%3A37045&type=design&node-id=29478-43993&viewport=-169%2C334%2C0.06&t=x8uHPQRdBl8Ypzbw-1&scaling=scale-down-width&mode=design
+ 
+Cost Central
+https://www.figma.com/proto/dlkcEDolt9QlU3E7qxB4sC/Reporting-Module-Prototype?page-id=29465%3A20833&type=design&node-id=29494-29102&viewport=-290%2C420%2C0.06&t=NxhUIhudjEOjVDfM-1&scaling=scale-down-width&starting-point-node-id=29494%3A29102&mode=design
+ 
+Chargeback
+https://www.figma.com/proto/dlkcEDolt9QlU3E7qxB4sC/Reporting-Module-Prototype?page-id=29560%3A30876&type=design&node-id=29560-31252&viewport=536%2C-178%2C0.03&t=fgGUMxK7xoVggdhU-1&scaling=scale-down-width&starting-point-node-id=29560%3A31252&mode=design
+ 
+Budget
+https://www.figma.com/proto/dlkcEDolt9QlU3E7qxB4sC/Reporting-Module-Prototype?page-id=29494%3A50138&type=design&node-id=29494-50186&viewport=-324%2C-39%2C0.05&t=FxrI6KhwyMDY1zNo-1&scaling=scale-down-width&starting-point-node-id=29494%3A50186&mode=design
+
+Alerts
+https://www.figma.com/proto/QLsQx4r006yhLCWQlmjpKJ/Alert-management-System--new-2?node-id=1886-3849&t=auzQK2CbecwvsDMJ-0&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=2%3A1194
+
+
+
+https://github.com/Appkube-awsx/awsx-elementmanager-doc

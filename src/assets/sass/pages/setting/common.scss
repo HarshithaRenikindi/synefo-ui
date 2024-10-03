@@ -1,0 +1,163 @@
+.setting-common-searchbar {
+  margin: 20px 0;
+  h5 {
+    margin-bottom: 15px;
+  }
+  .top-search {
+    position: relative;
+    .form-control {
+      width: 100%;
+      height: 40px;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 500;
+      color: #000000;
+      padding: 10px 50px 10px 20px;
+      border: none;
+      background-color: #eef0fa;
+      border-radius: 8px;
+    }
+
+    button {
+      position: absolute;
+      top: 8px;
+      right: 15px;
+      display: inline-flex;
+      border: none;
+      background-color: transparent;
+      color: #a1a3d4;
+    }
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+    li {
+      display: inline-block;
+      list-style: none;
+      padding: 0;
+      margin-right: 15px;
+      width: auto;
+      &:last-child {
+        margin-right: 0;
+      }
+      .primary-btn {
+        a {
+          color: #ffffff;
+        }
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+.setting-common-table {
+  border-radius: 10px !important;
+  box-shadow: 0px 41.777610778808594px 33.422088623046875px 0px #6c49ac0d !important;
+
+  table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    thead {
+      tr {
+        display: inline-table;
+        width: 100%;
+        table-layout: fixed;
+        th {
+          font-weight: 500;
+          color: #000000;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-top: 12px;
+          padding-bottom: 12px;
+          font-size: 14px;
+          font-family: "Poppins", sans-serif;
+          border-bottom-color: #b3b3b3;
+          border-bottom-style: dotted;
+        }
+      }
+    }
+    tbody {
+      display: block;
+      max-height: 300px;
+      overflow: auto;
+      width: calc(100% - 0.05em);
+      tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        td {
+          font-weight: 400;
+          color: #383874;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          font-size: 12px;
+          line-height: 18px;
+          font-family: "Poppins", sans-serif;
+          border-bottom-color: #eaecf0;
+          border-bottom-style: solid;
+          .roles-box {
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: 400;
+            background: #00b929;
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-left: 10px;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}
+
+.tabs-break-width {
+ display: inline-flex;
+  .tabs-menu {
+    display: inline-flex;
+    background: transparent;
+    padding: 0 10px 0 0;
+    div {
+      padding: 0;
+      font-size: 11px;
+      line-height: 28px;
+      padding-left: 15px;
+      padding-right: 25px;
+      color: #384cff;
+    }
+     svg {
+      right: 2px !important;
+      color: #384cff;
+  }
+    fieldset {
+      border-color: #384cff;
+    }
+  }
+}
+
+.check-box {
+  color: #3247e5 !important;
+}
+
+.table-tooltip-dark {
+  border-radius: 6px;
+  .MuiTooltip-tooltip {
+    margin-bottom: 0 !important;
+    margin-top: 5px !important;
+    border-radius: 5px;
+    padding: 4px 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 15px;
+  }
+  .css-kudwh-MuiTooltip-arrow::before {
+    border: 1px solid #000000;
+  }
+}

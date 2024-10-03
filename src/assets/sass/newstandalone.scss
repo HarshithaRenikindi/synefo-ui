@@ -1,0 +1,46 @@
+// Fonts And font-awesome Css //
+@import 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css';
+
+// Custom Css //
+@import "./common";
+@import "./custom";
+@import "./variables";
+
+// Components Css //
+
+@import "./components/sideBar";
+@import "./components/topBar";
+@import "./components/_modals";
+@import "./components/modal";
+@import "./components/topologyView";
+@import "./components/accordionview";
+@import "./components/servicesTabs.scss";
+@import "./components/alertFilterSection.scss";
+@import "./components/titleIconAndCountOfCard.scss";
+@import "./components//titleIconWithInfoOfCard.scss";
+@import "./components/verticalTitleAndIconOfCard.scss";
+
+// Pages Css //
+@import "./pages/sign";
+@import "./pages/forgetpassword";
+@import "./pages/dashboard/style.scss";
+@import "./pages/environmentlist/styles.scss";
+@import "./pages/setting/styles.scss";
+@import "./pages/newaccountsetup";
+@import "./pages/configuretopology";
+@import "./pages/deployproject";
+@import "./pages/createscratch.scss";
+@import "./pages/selectyourtemplate.scss";
+@import "./pages/resetpassword.scss";
+@import "./pages/error.scss";
+@import "./pages/reports.scss";
+@import "./pages/bimapping/styles.scss";
+@import "./pages/dsiscoveredAssets/styles.scss";
+@import "./pages/newReports/styles.scss";
+@import "./pages/alerts/style.scss";
+
+
+
+
+

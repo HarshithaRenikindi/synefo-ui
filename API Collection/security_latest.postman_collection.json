@@ -1,0 +1,2570 @@
+{
+	"info": {
+		"_postman_id": "69b8440c-6f34-41e6-9d49-ea9adca55475",
+		"name": "security_latest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4204032"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "listAll",
+					"protocolProfileBehavior": {
+						"strictSSL": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/listAll",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"listAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "siddhesh",
+									"type": "default"
+								},
+								{
+									"key": "organization",
+									"value": "Synectiks",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "SYnectiks@1234",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "siddhesh.deshmukh@synectiks.com",
+									"type": "default"
+								},
+								{
+									"key": "ownerId",
+									"value": "503",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "ADMIN",
+									"type": "text"
+								},
+								{
+									"key": "targetService",
+									"value": "cmdb",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "roleId",
+									"value": "115,116",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "errorOnOrgFound",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "orgProfileFile",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/create",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "test-user",
+									"type": "default"
+								},
+								{
+									"key": "organization",
+									"value": "Synectiks",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "test-user@123",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "manoj.sharma@synectiks.com",
+									"type": "default"
+								},
+								{
+									"key": "ownerId",
+									"value": "2063",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "user",
+									"type": "text"
+								},
+								{
+									"key": "targetService",
+									"value": "cmdb",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "firstName",
+									"value": "mm",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "kyc",
+									"type": "text"
+								},
+								{
+									"key": "errorOnOrgFound",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/create",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "newOrgUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "organization",
+									"value": "SYNECTIKS",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "manoj.sharma@synectiks.com",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/new-org-user",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"new-org-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/2122",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"2122"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-user-hierarchy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.synectiks.net/security/users/get-user-hierarchy?userName=siddhesh",
+							"protocol": "https",
+							"host": [
+								"api",
+								"synectiks",
+								"net"
+							],
+							"path": [
+								"security",
+								"users",
+								"get-user-hierarchy"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "siddhesh"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByOwner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/find-by-owner?ownerId=67",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"find-by-owner"
+							],
+							"query": [
+								{
+									"key": "ownerId",
+									"value": "67"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/delete/10",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"delete",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}"
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/delete",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":184,\r\n    \r\n}"
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/update",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/search",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateOrganization",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/updateOrganization",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"updateOrganization"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAssignedRoleGroups",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/updateAssignedRoleGroups",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"updateAssignedRoleGroups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUserRoles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/updateUserRoles?userName=helo-user&roleId=2059,2060",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"updateUserRoles"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "helo-user"
+								},
+								{
+									"key": "roleId",
+									"value": "2059,2060"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assingRoleGroupToUsers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleId\":2059,\r\n    \"userIds\":\"2107,2063\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/assingRoleGroupToUsers",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"assingRoleGroupToUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "inviteUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/inviteUser",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"inviteUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "acceptInvite",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/acceptInvite",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"acceptInvite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTeam",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/getTeam",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"getTeam"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "enableGoogleMfa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/enableGoogleMfa",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"enableGoogleMfa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "disableMfa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"test-user\",\r\n    \"password\":\"test-user@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/disableMfa",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"disableMfa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgotPassword",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/public/forgot-password?userName=helo-user",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"public",
+								"forgot-password"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "helo-user"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password-by-otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"ABCD\",\r\n    \"token\":\"nsWAwb\",\r\n    \"newPassword\":\"abcd1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/reset-password",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"ABCD\",\r\n    \"oldPassword\":\"abcd1\",\r\n    \"newPassword\":\"abcd1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/reset-password",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password-by-admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"ABCD\",\r\n    \"newPassword\":\"abcd1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/reset-password-by-admin",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"reset-password-by-admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-pending-user-requests",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/get-pending-user-requests?organizationId=2062",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"get-pending-user-requests"
+							],
+							"query": [
+								{
+									"key": "organizationId",
+									"value": "2062"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-pending-user-request-count",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/get-pending-user-request-count?organizationId=2062",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"get-pending-user-request-count"
+							],
+							"query": [
+								{
+									"key": "organizationId",
+									"value": "2062"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-pending-user-request-count Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"manoj.sharma@synectiks.com\",\r\n    \"ownerId\":2120,\r\n    \"status\":\"approve\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/pending-user-request-action",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"pending-user-request-action"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "permission category",
+			"item": [
+				{
+					"name": "listAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/permission-category/listAll",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"permission-category",
+								"listAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"version\": 1,\r\n    \"name\": \"Demo_permission-category\",\r\n    \"description\": \"Demo permission-category\",\r\n    \"permissions\": [\r\n        {\r\n            \"id\": 109\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/permission-category/create",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"permission-category",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"id\": 509,\r\n\t\"createdBy\": \"POSTMAN\",\r\n\t\"name\": \"test permission-category\",\r\n\t\"version\": 1,\r\n\t\"description\": \"test permission-category update\",\r\n\t\"permissions\": [\r\n\t\t{\r\n\t\t\t\"id\": 1,\r\n\t\t\t\"createdAt\": null,\r\n\t\t\t\"updatedAt\": null,\r\n\t\t\t\"createdBy\": \"pata nhi\",\r\n\t\t\t\"updatedBy\": null,\r\n\t\t\t\"version\": 1,\r\n\t\t\t\"name\": \"Team\",\r\n\t\t\t\"permission\": \"Team\",\r\n\t\t\t\"description\": \"Team menu\"\r\n\t\t}\r\n\t]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/permission-category/update",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"permission-category",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/permission-category/522",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"permission-category",
+								"522"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/permission-category/delete/508",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"permission-category",
+								"delete",
+								"508"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "permission",
+			"item": [
+				{
+					"name": "listAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/permissions/listAll",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"permissions",
+								"listAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"version\": 1,\r\n        \"name\": \"Test Permision\",\r\n        \"permission\": \"Team\",\r\n        \"description\": \"Team menu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/permissions/create",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"permissions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/permissions/5",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"permissions",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/permissions/delete/23",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"permissions",
+								"delete",
+								"23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"id\": 23,\r\n        \"createdAt\": null,\r\n        \"updatedAt\": null,\r\n        \"createdBy\": null,\r\n        \"updatedBy\": null,\r\n        \"version\": 1,\r\n        \"name\": \"Test Permision_updated\",\r\n        \"permission\": \"Team\",\r\n        \"description\": \"Team menu\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/permissions/update",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"permissions",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "organization",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/organization/getAllOrganizations",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"organization",
+								"getAllOrganizations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/organization/id/2119",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"organization",
+								"id",
+								"2119"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile-by-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/organization/profile-by-id/2119",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"organization",
+								"profile-by-id",
+								"2119"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile-by-name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/organization/profile-by-name/TESTORG",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"organization",
+								"profile-by-name",
+								"TESTORG"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByUserName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://34.199.12.114:8094/security/organization/getOrganizationByUserName?userName=qwert",
+							"protocol": "http",
+							"host": [
+								"34",
+								"199",
+								"12",
+								"114"
+							],
+							"port": "8094",
+							"path": [
+								"security",
+								"organization",
+								"getOrganizationByUserName"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "qwert"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://34.199.12.114:8094/security/organization/name/TEST_ORG",
+							"protocol": "http",
+							"host": [
+								"34",
+								"199",
+								"12",
+								"114"
+							],
+							"port": "8094",
+							"path": [
+								"security",
+								"organization",
+								"name",
+								"TEST_ORG"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name\":\"test-12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://34.199.12.114:8094/security/organization/add?pushToCmdb=true",
+							"protocol": "http",
+							"host": [
+								"34",
+								"199",
+								"12",
+								"114"
+							],
+							"port": "8094",
+							"path": [
+								"security",
+								"organization",
+								"add"
+							],
+							"query": [
+								{
+									"key": "pushToCmdb",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pushToCMDB",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name\":\"test_qwer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/organization/push-to-cmdb/wwwww",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"organization",
+								"push-to-cmdb",
+								"wwwww"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "security",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/public/login?username=admin&password=password",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"public",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "admin"
+								},
+								{
+									"key": "password",
+									"value": "password"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"test\",\r\n    \"password\":\"password\",\r\n    \"rememberMe\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/public/signup",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"public",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"demo_user\",\r\n    \"password\":\"Demo@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/public/singin",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"public",
+								"singin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"test\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/public/authenticate",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"public",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authenticateUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/public/authenticateUser?userName=test",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"public",
+								"authenticateUser"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "test"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/public/logout?userName=home_test",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"public",
+								"logout"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "home_test"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "importUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/public/importUser",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"public",
+								"importUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authenticateGoogMFA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/public/authenticateGoogleMfa",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"public",
+								"authenticateGoogleMfa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authenticateSession",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"home_test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/public/authenticateSession",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"public",
+								"authenticateSession"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "role",
+			"item": [
+				{
+					"name": "listAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/roles/listAll",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"roles",
+								"listAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByOwnerAndGroup",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/roles/find-by-owner?createdBy=jasmin&isGroup=true",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"roles",
+								"find-by-owner"
+							],
+							"query": [
+								{
+									"key": "createdBy",
+									"value": "jasmin"
+								},
+								{
+									"key": "isGroup",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"new group\",\r\n    \"description\": \"description\",\r\n    \"grp\": true,\r\n    \"createdBy\": \"manoj\",\r\n    \"roles\": [\r\n        {\r\n            \"id\": 2064\r\n        }\r\n    ],\r\n    \"users\": [\r\n        {\r\n            \"id\": 2063\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/roles/create",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"roles",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createSuperAdminsGroup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Super Admins\",\r\n    \"description\": \"Super Admins Role Group\",\r\n    \"grp\":true,\r\n    \"policies\":[],\r\n    \"roles\":[],\r\n    \"createdBy\":\"jasmin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/roles/create",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"roles",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createDefaultUsersGroup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Default Users\",\r\n    \"description\": \"Default Users Role Group\",\r\n    \"grp\":true,\r\n    \"policies\":[],\r\n    \"roles\":[\r\n        {\r\n            \"id\":114\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/roles/create",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"roles",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAdministrator",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Administrator\",\r\n    \"description\": \"Administrator role\",\r\n    \"grp\":false,\r\n    \"policies\":[\r\n        {\r\n            \"id\":63\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/roles/create",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"roles",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createBasicUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Basic User\",\r\n    \"description\": \"Basic User role\",\r\n    \"grp\":false,\r\n    \"policies\":[\r\n        \r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/roles/create",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"roles",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create role group",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"version\": 1,\r\n    \"name\": \"Demo_Role_Group\",\r\n    \"description\": \"Demo Role Group\",\r\n    \"grp\":true,\r\n    \"roles\":[\r\n        {\r\n            \"id\":60\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/roles/create",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"roles",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/roles/116",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"roles",
+								"116"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-role-group-details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.synectiks.net/security/roles/get-role-group-details?userName=jasmin&roleId=5870",
+							"protocol": "https",
+							"host": [
+								"api",
+								"synectiks",
+								"net"
+							],
+							"path": [
+								"security",
+								"roles",
+								"get-role-group-details"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "jasmin"
+								},
+								{
+									"key": "roleId",
+									"value": "5870"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/roles/delete/108",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"roles",
+								"delete",
+								"108"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"5874\",\r\n    \"organization\":{},\r\n    \"policies\": [\r\n        {\r\n            \"id\":5819\r\n        },\r\n        {\r\n            \"id\":5930\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/roles/update",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"roles",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "policy",
+			"item": [
+				{
+					"name": "listAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/policy/listAll",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"policy",
+								"listAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"version\": 1,\r\n    \"name\": \"All Access\",\r\n    \"description\": \"All Access Policy\",\r\n    \"permissions\": [\r\n\t\t{\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 5\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 6\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 7\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 8\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 9\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 10\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 11\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 12\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 13\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 14\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 15\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 16\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 17\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 18\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 19\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 20\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 21\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 22\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 23\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 24\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 25\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 26\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 27\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 28\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 29\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 30\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 31\r\n\t\t},\r\n\r\n        {\r\n\t\t\t\"permissionCategoryId\": 2,\r\n            \"permissionId\": 32\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 2,\r\n            \"permissionId\": 33\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 2,\r\n            \"permissionId\": 34\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 2,\r\n            \"permissionId\": 35\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 2,\r\n            \"permissionId\": 36\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 2,\r\n            \"permissionId\": 37\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 2,\r\n            \"permissionId\": 38\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 2,\r\n            \"permissionId\": 39\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 2,\r\n            \"permissionId\": 40\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 2,\r\n            \"permissionId\": 41\r\n\t\t},\r\n\r\n        {\r\n\t\t\t\"permissionCategoryId\": 3,\r\n            \"permissionId\": 42\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 3,\r\n            \"permissionId\": 43\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 3,\r\n            \"permissionId\": 44\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 3,\r\n            \"permissionId\": 45\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 3,\r\n            \"permissionId\": 46\r\n\t\t},\r\n\r\n        {\r\n\t\t\t\"permissionCategoryId\": 4,\r\n            \"permissionId\": 47\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 4,\r\n            \"permissionId\": 48\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 4,\r\n            \"permissionId\": 49\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 4,\r\n            \"permissionId\": 50\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 4,\r\n            \"permissionId\": 51\r\n\t\t}\r\n        \r\n\t]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/policy/create",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"policy",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAllAccessPolicy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"version\": 1,\r\n    \"name\": \"All Access\",\r\n    \"description\": \"All Access Policy\",\r\n    \"permissions\": [\r\n\t\t{\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 5\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 6\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 7\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 8\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 9\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 10\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 11\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 12\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 13\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 14\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 15\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 16\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 17\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 18\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 19\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 20\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 21\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 22\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 23\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 24\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 25\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 26\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 27\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 28\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 29\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 30\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 1,\r\n            \"permissionId\": 31\r\n\t\t},\r\n\r\n        {\r\n\t\t\t\"permissionCategoryId\": 2,\r\n            \"permissionId\": 32\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 2,\r\n            \"permissionId\": 33\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 2,\r\n            \"permissionId\": 34\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 2,\r\n            \"permissionId\": 35\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 2,\r\n            \"permissionId\": 36\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 2,\r\n            \"permissionId\": 37\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 2,\r\n            \"permissionId\": 38\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 2,\r\n            \"permissionId\": 39\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 2,\r\n            \"permissionId\": 40\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 2,\r\n            \"permissionId\": 41\r\n\t\t},\r\n\r\n        {\r\n\t\t\t\"permissionCategoryId\": 3,\r\n            \"permissionId\": 42\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 3,\r\n            \"permissionId\": 43\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 3,\r\n            \"permissionId\": 44\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 3,\r\n            \"permissionId\": 45\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 3,\r\n            \"permissionId\": 46\r\n\t\t},\r\n\r\n        {\r\n\t\t\t\"permissionCategoryId\": 4,\r\n            \"permissionId\": 47\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 4,\r\n            \"permissionId\": 48\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 4,\r\n            \"permissionId\": 49\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 4,\r\n            \"permissionId\": 50\r\n\t\t},\r\n        {\r\n\t\t\t\"permissionCategoryId\": 4,\r\n            \"permissionId\": 51\r\n\t\t}\r\n        \r\n\t]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/policy/create",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"policy",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createNoAccessPolicy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"version\": 1,\r\n    \"name\": \"No Access\",\r\n    \"description\": \"No Access Policy\",\r\n    \"permissions\": [\r\n\t    \r\n\t]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/policy/create",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"policy",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"id\": 58,\r\n\t\"permissions\": [\r\n\t\t{\r\n\t\t\t\"id\": 59\r\n\t\t},\r\n        {\r\n\t\t\t\"id\": 57\r\n\t\t}\r\n\t]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/policy/update",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"policy",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/policy/512",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"policy",
+								"512"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/policy/delete/508",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"policy",
+								"delete",
+								"508"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "new_api's",
+			"item": [
+				{
+					"name": "createPermissionInBatch Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"xformation-servicedesk-ui-plugin\": [\r\n\t\t{\r\n\t\t\t\"permission\": \"commancomponent-createbuttoncomponent-createbtn\",\r\n\t\t\t\"description\": \"permission for 'create button' at 'domain\\\\CommanComponents\\\\CreateButtonComponent.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"commancomponent-createbuttoncomponent-ticketbtn\",\r\n\t\t\t\"description\": \"permission for 'create ticket dropdown' at 'domain\\\\CommanComponents\\\\CreateButtonComponent.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"commancomponent-createbuttoncomponent-emailbtn\",\r\n\t\t\t\"description\": \"permission for 'create email dropdown' at 'domain\\\\CommanComponents\\\\CreateButtonComponent.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"commancomponent-createbuttoncomponent-contactbtn\",\r\n\t\t\t\"description\": \"permission for 'add new contact dropdown' at 'domain\\\\CommanComponents\\\\CreateButtonComponent.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"commancomponent-createbuttoncomponent-companytbtn\",\r\n\t\t\t\"description\": \"permission for 'add new company dropdown' at 'domain\\\\CommanComponents\\\\CreateButtonComponent.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"commancomponent-createbuttoncomponent-agentbtn\",\r\n\t\t\t\"description\": \"permission for 'add new agent dropdown' at 'domain\\\\CommanComponents\\\\CreateButtonComponent.tsx'\"\r\n\t\t}\r\n\t],\r\n\t\"xformation-alertmanager-ui-plugin\": [\r\n\t\t{\r\n\t\t\t\"permission\": \"manage-alert-rule\",\r\n\t\t\t\"description\": \"Permissions of 'Manage Alert Rule' Button of MonitorAlert\\\\index.txt\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"manage-workflows\",\r\n\t\t\t\"description\": \"Permissions of 'Manage Workflows' Button of MonitorAlert\\\\index.txt\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"managealertrule-index-ruletbl-editbtn\",\r\n\t\t\t\"description\": \"Permission for 'edit rule action button'  at 'xformation-alertmanager-ui-plugin\\\\src\\\\domain\\\\ManageAlertRule\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"managealertrule-index-ruletbl-deletebtn\",\r\n\t\t\t\"description\": \"Permission for 'delete rule action button' at 'xformation-alertmanager-ui-plugin\\\\src\\\\domain\\\\ManageAlertRule\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"managealertrule-index-scripttbl-editbtn\",\r\n\t\t\t\"description\": \"Permission for 'edit script action button'  at 'xformation-alertmanager-ui-plugin\\\\src\\\\domain\\\\ManageAlertRule\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"managealertrule-index-scripttbl-deletebtn\",\r\n\t\t\t\"description\": \"Permission for 'delete script action button' at 'xformation-alertmanager-ui-plugin\\\\src\\\\domain\\\\ManageAlertRule\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"managealertrule-index-createalertrulebtn\",\r\n\t\t\t\"description\": \"Permission for 'Create Alert Rule' button at 'xformation-alertmanager-ui-plugin\\\\src\\\\domain\\\\ManageAlertRule\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"managealertrule-index-writescriptbtn\",\r\n\t\t\t\"description\": \"Permission for 'Write Script' button at 'xformation-alertmanager-ui-plugin\\\\src\\\\domain\\\\ManageAlertRule\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"rules-index-newalertrulebtn\",\r\n\t\t\t\"description\": \"Permission for 'New Alert Rule' button at 'xformation-alertmanager-ui-plugin\\\\src\\\\domain\\\\rules\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"rules-index-editbtn\",\r\n\t\t\t\"description\": \"Permission for 'edit action button'  at 'xformation-alertmanager-ui-plugin\\\\src\\\\domain\\\\rules\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"rules-index-deletebtn\",\r\n\t\t\t\"description\": \"Permission for 'delete action button'  at 'xformation-alertmanager-ui-plugin\\\\src\\\\domain\\\\rules\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"allalerts-index-alerttbl-editbtn\",\r\n\t\t\t\"description\": \"Permission for 'edit action' button at 'xformation-alertmanager-ui-plugin\\\\src\\\\domain\\\\AllAlerts\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"allalerts-index-alerttbl-deletebtn\",\r\n\t\t\t\"description\": \"Permission for 'delete action button'  at 'xformation-alertmanager-ui-plugin\\\\src\\\\domain\\\\AllAlerts\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"allalerts-index-alerttbl-createticketbtn\",\r\n\t\t\t\"description\": \"Permission for 'create ticket action button'  at 'xformation-alertmanager-ui-plugin\\\\src\\\\domain\\\\AllAlerts\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"allalerts-index-alerttbl-silencebtn\",\r\n\t\t\t\"description\": \"Permission for 'alert silence action button'  at 'xformation-alertmanager-ui-plugin\\\\src\\\\domain\\\\AllAlerts\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"alltickets-index-createticketbtn\",\r\n\t\t\t\"description\": \"Permission for 'create ticket button'  at 'xformation-alertmanager-ui-plugin\\\\src\\\\domain\\\\AllTickets\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"alltickets-index-tickettbl-editbtn\",\r\n\t\t\t\"description\": \"Permission for 'table edit action button'  at 'xformation-alertmanager-ui-plugin\\\\src\\\\domain\\\\AllTickets\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"alltickets-index-tickettbl-deletebtn\",\r\n\t\t\t\"description\": \"Permission for 'table delete button'  at 'xformation-alertmanager-ui-plugin\\\\src\\\\domain\\\\AllTickets\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"alltickets-index-tickettbl-startec2btn\",\r\n\t\t\t\"description\": \"Permission for 'table start ec2 button'  at 'xformation-alertmanager-ui-plugin\\\\src\\\\domain\\\\AllTickets\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"alltickets-index-tickettbl-startec2withpromptbtn\",\r\n\t\t\t\"description\": \"Permission for 'table start-ec2-with-prompt-action-btn button'  at 'xformation-alertmanager-ui-plugin\\\\src\\\\domain\\\\AllTickets\\\\index.tsx'\"\r\n\t\t}\r\n\t],\r\n\t\"xformation-perfmanager-ui-plugin\": [\r\n\t\t{\r\n\t\t\t\"permission\": \"catalog-topmenu-manangedashboardsbtn\",\r\n\t\t\t\"description\": \"Permissions of 'Manage Dashboards' Button of 'xformation-perfmanager-ui-plugin\\\\src\\\\domain\\\\Catalog\\\\TopMenu.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"catalog-topmenu-catlogbtn\",\r\n\t\t\t\"description\": \"Permissions of 'Catalog' Button of 'xformation-perfmanager-ui-plugin\\\\src\\\\domain\\\\Catalog\\\\TopMenu.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"catalog-topmenu-librarybtn\",\r\n\t\t\t\"description\": \"Permissions of 'Library' Button of 'xformation-perfmanager-ui-plugin\\\\src\\\\domain\\\\Catalog\\\\TopMenu.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"catalog-topmenu-collectionbtn\",\r\n\t\t\t\"description\": \"Permissions of 'Collection' Button of 'xformation-perfmanager-ui-plugin\\\\src\\\\domain\\\\Catalog\\\\TopMenu.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"catalog-topmenu-rulebtn\",\r\n\t\t\t\"description\": \"Permissions of 'Rule' Button of 'xformation-perfmanager-ui-plugin\\\\src\\\\domain\\\\Catalog\\\\TopMenu.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"catalog-topmenu-preferencesbtn\",\r\n\t\t\t\"description\": \"Permissions of 'Rule' Button of 'xformation-perfmanager-ui-plugin\\\\src\\\\domain\\\\Catalog\\\\TopMenu.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"managedashboard-managetab-newdashboardbtn\",\r\n\t\t\t\"description\": \"Permissions of 'New Dashboard' Button of 'xformation-perfmanager-ui-plugin\\\\src\\\\domain\\\\ManageDashboard\\\\ManageTab.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"managedashboard-managetab-newfolderbtn\",\r\n\t\t\t\"description\": \"Permission for 'New Folder' button at 'xformation-perfmanager-ui-plugin\\\\src\\\\domain\\\\ManageDashboard\\\\ManageTab.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"managedashboard-managetab-importbtn\",\r\n\t\t\t\"description\": \"Permission for 'Import' button at 'xformation-perfmanager-ui-plugin\\\\src\\\\domain\\\\ManageDashboard\\\\ManageTab.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"managedashboard-newplaylist-createnewplaylistbtn\",\r\n\t\t\t\"description\": \"Permission for 'create new Playlist' Button of 'xformation-perfmanager-ui-plugin\\\\src\\\\domain\\\\ManageDashboard\\\\NewPlayList.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"library-index-addfolderbtn\",\r\n\t\t\t\"description\": \"Permission for 'add folder' of  'xformation-perfmanager-ui-plugin\\\\src\\\\domain\\\\Library\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"collectionview-index-collectiontbl-edtbtn\",\r\n\t\t\t\"description\": \"Permission for 'edit ' action button of 'xformation-perfmanager-ui-plugin\\\\src\\\\domain\\\\CollectionView\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"collectionview-index-collectiontbl-edtbtn\",\r\n\t\t\t\"description\": \"Permission for 'delete' action button  of 'xformation-perfmanager-ui-plugin\\\\src\\\\domain\\\\CollectionView\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"collectionview-index-collectiontbl-plusbtn\",\r\n\t\t\t\"description\": \"Permission for 'plus ' action Button  of 'xformation-perfmanager-ui-plugin\\\\src\\\\domain\\\\CollectionView\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"collectionview-index-collectiontbl-ellipsisbtn\",\r\n\t\t\t\"description\": \"Permission for 'ellipsis' action button of 'xformation-perfmanager-ui-plugin\\\\src\\\\domain\\\\CollectionView\\\\index.tsx'\"\r\n\t\t}\r\n\t],\r\n\t\"xformation-rbac-ui-plugin\": [\r\n\t\t{\r\n\t\t\t\"permission\": \"rolepermission-index-permissions\",\r\n\t\t\t\"description\": \"permission for 'permission tab or tab content' at 'xformation-rbac-ui-plugin\\\\src\\\\domain\\\\application\\\\RolesPermission\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"rolepermission-index-roles\",\r\n\t\t\t\"description\": \"permission for 'roles tab or tab content' at 'xformation-rbac-ui-plugin\\\\src\\\\domain\\\\application\\\\RolesPermission\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"rolepermission-index-groups\",\r\n\t\t\t\"description\": \"permission for 'groups tab or tab content' at 'xformation-rbac-ui-plugin\\\\src\\\\domain\\\\application\\\\RolesPermission\\\\index.tsx'\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"rolepermission-index-users\",\r\n\t\t\t\"description\": \"permission for 'users tab or tab content' at 'xformation-rbac-ui-plugin\\\\src\\\\domain\\\\application\\\\RolesPermission\\\\index.tsx'\"\r\n\t\t}\r\n\t],\r\n\t\"grafana-ui\": [\r\n\t\t{\r\n\t\t\t\"permission\": \"overview\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"activity-log\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"alerts\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"alert-manager-dashboard\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"new-alert-rule\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"all-alert-rule\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"metrics\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"metrics-catalog\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"metrics-library\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"metrics-collection\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"metrics-rule\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"metrics-preferences\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"grafana-logs\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"service-health\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"compliance\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"compliance-dashboard\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"compliance-rulesets\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"compliance-builder\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"compliance-remediation\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"compliance-assessment-history\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"compliance-exclusions\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"compliance-policies\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"tickets\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"tickets-dashboard\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"tickets-contacts\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"tickets-companies\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"tickets-reports\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"tickets-preferences\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"applications\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"virtual-machines\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"networks\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"jobs\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"diagnostic-settings\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"rbac-settings\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"virtual-machines\",\r\n\t\t\t\"description\": \"\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"permission\": \"networks\",\r\n\t\t\t\"description\": \"\"\r\n\t\t}\r\n\t]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://100.64.108.25:8094/security/permissions/createPermissionInBatch",
+							"protocol": "http",
+							"host": [
+								"100",
+								"64",
+								"108",
+								"25"
+							],
+							"port": "8094",
+							"path": [
+								"security",
+								"permissions",
+								"createPermissionInBatch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createPermissionsByFile Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "inputFile",
+									"type": "file",
+									"src": "/E:/Desktop/permission.txt"
+								},
+								{
+									"key": "str",
+									"value": "hello",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8094/security/permissions/createPermissionsByFile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8094",
+							"path": [
+								"security",
+								"permissions",
+								"createPermissionsByFile"
+							],
+							"query": [
+								{
+									"key": "inputFile",
+									"value": "hello",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listAllRole Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "multipart/form-data",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "inputFile",
+									"type": "file",
+									"src": "/E:/Desktop/permission.txt"
+								},
+								{
+									"key": "str",
+									"value": "hello",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8094/roles/permissions/listAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8094",
+							"path": [
+								"roles",
+								"permissions",
+								"listAll"
+							],
+							"query": [
+								{
+									"key": "inputFile",
+									"value": "hello",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/search",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateOrganization Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/updateOrganization",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"updateOrganization"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAssignedRoleGroups Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/updateAssignedRoleGroups",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"updateAssignedRoleGroups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUserRoles Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/updateUserRoles",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"updateUserRoles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "inviteUser Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/inviteUser",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"inviteUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "acceptInvite Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/acceptInvite",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"acceptInvite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTeam Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/getTeam",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"getTeam"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "enableGoogleMfa Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/enableGoogleMfa?userName=manoj.sharma@synectiks.com&organizationName=Synectiks",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"enableGoogleMfa"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "manoj.sharma@synectiks.com"
+								},
+								{
+									"key": "organizationName",
+									"value": "Synectiks"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "disableGoogleMfa Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/disableGoogleMfa",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"disableGoogleMfa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/public/login?username=test&password=password",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"public",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "test"
+								},
+								{
+									"key": "password",
+									"value": "password"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"test\",\r\n    \"password\":\"password\",\r\n    \"rememberMe\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/public/signup",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"public",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"test\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/public/singin",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"public",
+								"singin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authenticate Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"test\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/public/authenticate",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"public",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authenticateUser Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/public/authenticateUser?userName=test",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"public",
+								"authenticateUser"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "test"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/public/logout",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"public",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "importUser Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/public/importUser",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"public",
+								"importUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authenticateGoogMFA Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/public/authenticateGoogleMfa",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"public",
+								"authenticateGoogleMfa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mfa",
+			"item": [
+				{
+					"name": "getMfa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"home_test\",\r\n    \"password\":\"home_test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://40fglalyd0.execute-api.us-east-1.amazonaws.com/dev/users/mfaCode",
+							"protocol": "https",
+							"host": [
+								"40fglalyd0",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"users",
+								"mfaCode"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "home_test",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "home_test",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authenticate mfa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"home_test\",\r\n    \"token\":\"115151\",\r\n    \"mfaKey\":\"####################\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/authenticate-mfa",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"authenticate-mfa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "disable mfa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"home_test\",\r\n    \"token\":\"739674\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/disable-mfa",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"disable-mfa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseSecurityUrl",
+			"value": "http://localhost:8094/security"
+		}
+	]
+}

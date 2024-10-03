@@ -1,0 +1,89 @@
+.deploy-project-container {
+  width: 100%;
+  display: block;
+  padding: 30px 45px;
+  background-color: #f6f7fb;
+
+  .page-heading {
+    h3 {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 400;
+      color: #383874;
+      margin-bottom: 0px;
+    }
+  }
+
+  .opration-mode-section {
+    width: 100%;
+    display: block;
+    margin-top: 50px;
+
+    .opration-head-section {
+      width: 100%;
+      display: block;
+      margin-top: 10px;
+
+      h4 {
+        font-size: 22px;
+        line-height: 26px;
+        font-weight: 500;
+        color: #344054;
+        margin-bottom: 0px;
+      }
+
+      p {
+        font-size: 13px;
+        line-height: 16px;
+        font-weight: 400;
+        color: #344054;
+      }
+    }
+  }
+
+  .opration-cards {
+    width: 80%;
+    margin: 30px auto 50px;
+
+    .opration-card {
+      min-height: 380px;
+      border-radius: 10px;
+      background: #ffffff;
+      padding: 15px 30px;
+      cursor: pointer;
+      width: 75%;
+      margin: 0 auto;
+      box-shadow: 0px 100px 80px rgba(108, 73, 172, 0.07);
+
+      .card-images {
+        padding: 40px 10px 50px 10px;
+      }
+
+      .card-title {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20px;
+        color: #344054;
+      }
+
+      p {
+        margin-top: 10px;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        color: #798294;
+        width: 70%;
+        margin: 10px auto 0;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .deploy-project-container {
+    .opration-cards {
+      .opration-card {
+        width: 100%;
+      }
+    }
+  }
+}

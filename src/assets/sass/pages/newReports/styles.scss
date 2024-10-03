@@ -1,0 +1,15 @@
+// ******************* Common ******************* // 
+@import "./common.scss";
+@import "./newReportstable.scss";
+
+// ******************* Pages ******************* // 
+@import "./newReports.scss";
+@import "./spendoverview.scss";
+@import "./createInvoice.scss";
+@import "./historyDepartments.scss";
+
+// ******************* Components ******************* // 
+@import "./Components/timeSpendComponent.scss";
+@import "./Components/chartWrapper.scss";
+@import "./Components/progressBarChart.scss";
+@import "./Components/modal.scss";

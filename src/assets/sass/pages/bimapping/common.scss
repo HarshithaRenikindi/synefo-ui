@@ -1,0 +1,148 @@
+.bimapping-container {
+  width: 100%;
+  display: block;
+  padding: 30px 40px;
+  background-color: #f6f7fb;
+}
+
+.tier-table-section {
+  display: block;
+  width: 100%;
+  margin-top: 0;
+  .table {
+    overflow: hidden;
+    background-color: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+    .overview {
+      thead {
+        tr {
+          th {
+            border-right: 1px solid #dbdff1;
+            background-color: #f0f3ff;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 10px;
+            color: #383874;
+            &:last-child {
+              border-right: none;
+            }
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            padding: 10px 12px;
+            font-size: 13px;
+            line-height: 17px;
+            font-weight: 400;
+            width: auto;
+            white-space: nowrap;
+            color: #383874;
+            .check-box {
+              padding: 0;
+              margin-right: 8px;
+            }
+
+            .region {
+              display: inline-block;
+              width: auto;
+              .Region-fliter {
+                margin: 0;
+                .fliter-toggel {
+                  background: #dde1f8;
+                  height: 30px;
+                  line-height: 30px;
+                  padding: 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                  font-weight: 500;
+                  color: #383874;
+                  border: none;
+                  padding: 5px 10px;
+                  border-width: 0;
+                  .MuiSelect-select {
+                    padding: 0;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                  }
+                  .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon {
+                    right: 0px;
+                  }
+                  .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+                    border-width: 0;
+                  }
+                }
+              }
+            }
+            .subvalue {
+              display: block;
+              .form-control {
+                display: block;
+                width: 150px;
+                height: calc(1.5em + 0.75rem + 2px);
+                padding: 5px 10px;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 1.5;
+                margin: 0 auto;
+                color: #495057;
+                background-color: #fff;
+                background-clip: padding-box;
+                border: 1px solid #ced4da;
+                border-radius: 3px;
+                transition: border-color 0.15s ease-in-out,
+                  box-shadow 0.15s ease-in-out;
+              }
+            }
+            .first-entry-form {
+              width: 100%;
+              display: block;
+              .form-control {
+                display: block;
+                width: 150px;
+                height: calc(1.5em + 0.75rem + 2px);
+                padding: 5px 10px;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #495057;
+                background-color: #fff;
+                background-clip: padding-box;
+                border: 1px solid #ced4da;
+                border-radius: 3px;
+                transition: border-color 0.15s ease-in-out,
+                  box-shadow 0.15s ease-in-out;
+              }
+            }
+            .last-entry-form {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              .form-control {
+                display: block;
+                width: 150px;
+                height: calc(1.5em + 0.75rem + 2px);
+                padding: 5px 10px;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 1.5;
+                margin-right: 15px;
+                color: #495057;
+                background-color: #fff;
+                background-clip: padding-box;
+                border: 1px solid #ced4da;
+                border-radius: 3px;
+                transition: border-color 0.15s ease-in-out,
+                  box-shadow 0.15s ease-in-out;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

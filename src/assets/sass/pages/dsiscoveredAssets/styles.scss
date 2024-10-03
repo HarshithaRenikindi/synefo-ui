@@ -1,0 +1,11 @@
+// ******************* Common *******************//
+@import "./common.scss";
+
+// ******************* Pages *******************//
+@import "./loginEvents.scss";
+@import "./discoveredAssets.scss";
+
+// ******************* Common Components *******************//
+@import "./components/modal.scss";
+@import "./components/assetsTable.scss";
+@import "./components/assetsEnvironmentTab.scss";
