@@ -164,7 +164,7 @@ const Card = ({ title, percentage, total, change, color, resources }) => (
   <div className="bg-white rounded-lg shadow-md p-4 w-full sm:w-64  flex flex-col">
     <div className="flex items-center justify-start gap-2 mb-4">
       <CircularProgress percentage={percentage} color={color} />
-      <div className="text-left text-nowrap">
+      <div className="text-left ">
         <h2 className="text-lg font-semibold" style={{ fontSize: "16px", color: '#383874' }}>{title}</h2>
         <div className="flex justify-start items-baseline">
           <p className="text-xl sm:text-2xl font-bold" style={{ color: '#383874' }}>{total}</p>
@@ -201,7 +201,7 @@ export default function Component() {
       ],
     },
     {
-      title: "Over-provisioned",
+      title: "Over provisioned",
       percentage: 19,
       total: 0,
       change: 10,
