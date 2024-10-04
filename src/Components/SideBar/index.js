@@ -307,9 +307,9 @@ function SideBar() {
                         <span className={`icon ${Parser(item.icon)}`}></span>
                       </HtmlTooltip>
                     )}
- 
+
                     <span className="name">{Parser(item.name)}</span>
- 
+
                     {item.subMenu && (
                       <IconButton
                         aria-label={!isActiveSubMenu ? 'KeyboardArrowRightIcon' : 'KeyboardArrowUpIcon'}
@@ -354,5 +354,7 @@ function SideBar() {
     </Box>
   );
 }
- 
+
 export default SideBar;
+ 
+ 
