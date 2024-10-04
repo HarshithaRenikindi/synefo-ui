@@ -6,12 +6,12 @@ const CostSummaryBar = ({ totalCost, totalSpend }) => {
 
   <div className="flex items-center space-x-4">
     <span className="text-indigo-900 text-l">Total Cost</span>
-    <span className="text-indigo-900 text-l" style={{ marginLeft: '12px' }}>${totalCost}</span>
+    <span className="text-indigo-900 text-l" style={{ marginLeft: '12px' }}>$0</span>
   </div>
   <div className="w-px h-8 bg-gray-300 mx-8"></div> {/* Add margin on x-axis */}
   <div className="flex items-center space-x-4">
     <span className="text-indigo-900 text-l">Total Spend</span>
-    <span className="text-indigo-900 text-l">${totalSpend}</span>
+    <span className="text-indigo-900 text-l">$0</span>
   </div>
 </div>
 
