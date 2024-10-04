@@ -15,7 +15,9 @@ import Loader from "Components/Loader";
 import CommonTooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import { styled } from "@mui/material/styles";
 import { API_ERROR_MESSAGE, NO_DATA_FOUND } from "CommonData";
-
+import ProductPrediction from "../charts/ProductPrediction";
+import ProductionVsOthers from "../charts/ProductvsOthers";
+import ServiceType from "../charts/ServiceType";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const colorPallate = [
@@ -202,182 +204,17 @@ class CostAnalysis extends Component {
             <Box sx={{ flexGrow: 1 }}>
               <Grid container spacing={3}>
                 <Grid item lg={4} md={6} xs={12}>
-                  <Box id="chart" className="collapse-expand">
-                    {productWiseCost.status === status.IN_PROGRESS ? (
-                      <Loader className="spend-loading" />
-                    ) : (
-                      <>
-                        <Box className="heading">
-                          <h3>Product Wise Cost</h3>
-                          <Box className="product-cost">
-                            {productWiseCostData &&
-                            productWiseCostData.length ? (
-                              <>
-                                <label>
-                                  $
-                                  {productWiseCostData[
-                                    productWiseCostData.length - 1
-                                  ]?.total?.toLocaleString() || 0}
-                                </label>
-                              </>
-                            ) : (
-                              <></>
-                            )}
-                            <span>10%</span>
-                          </Box>
-                        </Box>
-                        {productWiseCostData && productWiseCostData.length ? (
-                          <Box className="chart-contant">
-                            <Box
-                              className="d-flex chart"
-                              style={{ width: "60%" }}
-                              justifyContent={"center"}
-                            >
-                              {productWiseCostData &&
-                              productWiseCostData.length ? (
-                                <Doughnut
-                                  data={this.manipulateDoughData(
-                                    productWiseCostData
-                                  )}
-                                  options={this.appendTooltipPercentage()}
-                                />
-                              ) : (
-                                <></>
-                              )}
-                            </Box>
-                            <Box className="d-block chart-details">
-                              <List>
-                                {this.renderBarsData(productWiseCostData)}
-                              </List>
-                            </Box>
-                          </Box>
-                        ) : (
-                          this.renderNoDataHtml(
-                            productWiseCost.status === status.FAILURE
-                              ? API_ERROR_MESSAGE
-                              : NO_DATA_FOUND
-                          )
-                        )}
-                      </>
-                    )}
-                  </Box>
+                  
+                           
+                            <ProductPrediction/>
+                      
                 </Grid>
                 <Grid item lg={4} md={6} xs={12}>
-                  <Box id="chart" className="collapse-expand">
-                    {productionVsOther.status === status.IN_PROGRESS ? (
-                      <Loader className="spend-loading" />
-                    ) : (
-                      <>
-                        <Box className="heading">
-                          <h3>Production Vs Others</h3>
-                          <Box className="product-cost">
-                            {productionVsOthersData &&
-                            productionVsOthersData.length ? (
-                              productionVsOthersData[
-                                productionVsOthersData.length - 1
-                              ].total ? (
-                                <label>
-                                  $
-                                  {productionVsOthersData[
-                                    productionVsOthersData.length - 1
-                                  ].total?.toLocaleString()}
-                                </label>
-                              ) : (
-                                <></>
-                              )
-                            ) : (
-                              <></>
-                            )}
-
-                            <span>10%</span>
-                          </Box>
-                        </Box>
-                        {productionVsOthersData?.length ? (
-                          <Box className="chart-contant">
-                            <Box
-                              className="d-flex chart"
-                              justifyContent={"center"}
-                              style={{ width: "60%" }}
-                            >
-                              <Doughnut
-                                data={this.manipulateDoughData(
-                                  productionVsOthersData
-                                )}
-                                options={this.appendTooltipPercentage()}
-                              />
-                            </Box>
-                            <Box className="d-block chart-details">
-                              <List>
-                                {this.renderBarsData(productionVsOthersData)}
-                              </List>
-                            </Box>
-                          </Box>
-                        ) : (
-                          this.renderNoDataHtml(
-                            productionVsOther.status === status.FAILURE
-                              ? API_ERROR_MESSAGE
-                              : NO_DATA_FOUND
-                          )
-                        )}
-                      </>
-                    )}
-                  </Box>
+                  <ProductionVsOthers/>
                 </Grid>
                 <Grid item lg={4} md={6} xs={12}>
-                  <Box id="chart" className="collapse-expand">
-                    {serviceTypeWiseCost.status === status.IN_PROGRESS ? (
-                      <Loader className="spend-loading" />
-                    ) : (
-                      <>
-                        <Box className="heading">
-                          <h3>Service Type Wise Cost </h3>
-                          <Box className="product-cost">
-                            {serviceTypeWiseCostData &&
-                            serviceTypeWiseCostData.length &&
-                            serviceTypeWiseCostData[
-                              serviceTypeWiseCostData.length - 1
-                            ]?.total ? (
-                              <label>
-                                $
-                                {serviceTypeWiseCostData[
-                                  serviceTypeWiseCostData.length - 1
-                                ]?.total?.toLocaleString()}
-                              </label>
-                            ) : (
-                              <></>
-                            )}
 
-                            <span>10%</span>
-                          </Box>
-                        </Box>
-                        {serviceTypeWiseCostData.length ? (
-                          <Box className="chart-contant">
-                            <Box
-                              className="d-flex chart"
-                              justifyContent={"center"}
-                              style={{ width: "60%" }}
-                            >
-                              <Doughnut
-                                data={this.manipulateDoughData(
-                                  serviceTypeWiseCostData
-                                )}
-                                options={this.appendTooltipPercentage()}
-                              />
-                            </Box>
-                            <Box className="d-block chart-details">
-                              <List>
-                                {this.renderBarsData(serviceTypeWiseCostData)}
-                              </List>
-                            </Box>
-                          </Box>
-                        ) : (
-                          this.renderNoDataHtml( serviceTypeWiseCost.status === status.FAILURE
-                            ? API_ERROR_MESSAGE
-                            : NO_DATA_FOUND)
-                        )}
-                      </>
-                    )}
-                  </Box>
+                <ServiceType/>
                 </Grid>
               </Grid>
             </Box>
