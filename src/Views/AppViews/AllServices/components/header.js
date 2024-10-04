@@ -125,7 +125,7 @@ const Header = () => {
         </nav>
 
         {/* Alerts Button */}
-        <button className="flex items-center text-blue-600 hover:text-blue-800">
+        <button className="flex items-center text-blue-600 hover:white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5 mr-1"

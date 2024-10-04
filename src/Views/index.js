@@ -94,6 +94,7 @@ import CreateWorkloadForm from "./AppViews/Wafr/CreateWorkLoad";
 import WorkLoad from "./AppViews/Wafr/workLoad"
 import WafrAssesssment from "./AppViews/Wafr/WafrAssesssment"
 // import EC2InstanceSummary from "./AppViews/AllServices/components/instancesummary";
+// import Test from '../Test'
 
 //These are the Cost Optimization Routes
 import Costoptimization from './AppViews/CostOptimization/index';  // Main resource dashboard
@@ -258,6 +259,10 @@ export const Views = (props) => {
             path={`${APP_PREFIX_PATH}/dashboard`}
             element={<Dashboard />}
           />
+          {/* <Route
+            path={`${APP_PREFIX_PATH}/dashboard`}
+            element={<Test />}
+          /> */}
           <Route
             path={`${APP_PREFIX_PATH}/assets/environments/aws/newaccountsetup/:departmentId?`}
             element={<NewAccountSetup />}
@@ -615,3 +620,6 @@ export const Views = (props) => {
 };
 
 export default withRouter(Views);
+
+
+

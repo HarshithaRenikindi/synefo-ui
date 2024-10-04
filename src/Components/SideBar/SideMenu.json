@@ -20,16 +20,20 @@
         },
         {
           "link": "/assets/AllServices",
-
           "name": "All Services"
+        },
+        {
+          "link": "/assets/assetmanagement",
+          "name": "Asset Management"
         },
         {
           "link": "/assets/price-estimator",
           "name": "priceEstimator"
         },
         {
-          "link": "/assets/assetmanagement",
-          "name": "Discovered Assets"
+          "link": "/alerts",
+          "icon": "alert",
+          "name": "Alerts"
         }
       ]
     },
@@ -61,4 +65,3 @@
     
   ]
 }
-

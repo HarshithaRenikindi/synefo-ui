@@ -90,6 +90,7 @@ const handleSetAlertClose = () => {
           </div>
         </Toolbar>
       </AppBar>
+
       <Timerange />
       <Terminatebuttons />
       <EC2Dashboard/>

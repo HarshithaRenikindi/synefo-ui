@@ -3,7 +3,9 @@ import { Box } from '@mui/material';
 import Header from '../header';
 import MetricCards from './matrixCard';
 import TabNavigation from './TabNavigations';
-import Performance from './Performance'
+import Performance from './Performance';
+import Availability from './Availability';
+
 
 const SingleEc2 = () => {
   // State to manage the currently active tab
@@ -23,12 +25,14 @@ const SingleEc2 = () => {
       </div>
 
       {/* Conditional Rendering Based on Active Tab */}
-      {activeTab === 'Performance' && <Performance /> }
-      {activeTab === 'Availability' && <div>Availability Page</div>}
+      {activeTab === 'Performance' && <Performance />}
+      {activeTab === 'Availability' && <Availability />}
       {activeTab === 'Reliability' && <div>Reliability Page</div>}
       {activeTab === 'End Usage' && <div>End Usage Page</div>}
       {activeTab === 'Compliance' && <div>Compliance Page</div>}
       {activeTab === 'Data Protection' && <div>Data Protection Page</div>}
+
+
     </Box>
   );
 };

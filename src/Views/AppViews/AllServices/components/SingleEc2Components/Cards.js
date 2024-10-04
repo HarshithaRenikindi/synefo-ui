@@ -92,17 +92,17 @@ const UtilizationCards = () => {
   ];
 
   return (
-    <div className="flex justify-around flex-wrap">
+    <div className="flex justify-between gap-4 flex-nowrap xl:flex-wrap">
       {data.map((item, index) => (
         <div
           key={index}
-          className="bg-white shadow-md rounded-lg w-80 m-4 border border-gray-200"
+          className="bg-white shadow-md rounded-lg w-80 my-4 border border-gray-200 "
         >
           <div className="px-4 pt-3">
             <h2 className="text-lg font-semibold text-gray-700">{item.title}</h2>
           </div>
           <hr className="my-2" />
-          <div className="text-sm text-gray-500 py-2 px-8">
+          <div className="text-sm text-gray-500 py-2 px-6">
             {Object.entries(item).map(([key, value]) =>
               key !== 'title' ? (
                 <div className="flex justify-between my-2" key={key}>
