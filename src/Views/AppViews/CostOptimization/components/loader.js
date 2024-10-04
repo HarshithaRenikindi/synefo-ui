@@ -161,7 +161,7 @@ const CircularProgress = ({ percentage, color }) => (
 );
 
 const Card = ({ title, percentage, total, change, color, resources }) => (
-  <div className="bg-white rounded-lg shadow-md p-4 w-full sm:w-64 md:w-[340px] flex flex-col">
+  <div className="bg-white rounded-lg shadow-md p-4 w-full sm:w-64  flex flex-col">
     <div className="flex items-center justify-start gap-4 mb-4">
       <CircularProgress percentage={percentage} color={color} />
       <div className="text-right">
@@ -194,10 +194,10 @@ export default function Component() {
       color: "text-purple-500",
       resources: [
         { name: "EC2", count: "00" },
-        { name: "EBS", count: "02" },
-        { name: "RDS DB", count: "03" },
-        { name: "Lambda", count: "03" },
-        { name: "Auto Scaling", count: "01" },
+        { name: "EBS", count: "00" },
+        { name: "RDS DB", count: "00" },
+        { name: "Lambda", count: "00" },
+        { name: "Auto Scaling", count: "00" },
       ],
     },
     {
@@ -207,11 +207,11 @@ export default function Component() {
       change: 10,
       color: "text-orange-500",
       resources: [
-        { name: "EC2", count: "04" },
-        { name: "EBS", count: "01" },
-        { name: "RDS DB", count: "00" },
+        { name: "EC2", count: "02" },
+        { name: "EBS", count: "00" },
+        { name: "RDS DB", count: "01" },
         { name: "Lambda", count: "00" },
-        { name: "Auto Scaling", count: "01" },
+        { name: "Auto Scaling", count: "00" },
       ],
     },
     {

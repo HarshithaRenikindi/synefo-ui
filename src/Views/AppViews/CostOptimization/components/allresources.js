@@ -127,10 +127,10 @@ export default function Component() {
 
 
         <MenuItem
-          onClick={() => {
-            handleEBSVolumes();
-            handleMenuClose('EBS Volumes');
-          }}
+          // onClick={() => {
+          //   handleEBSVolumes();
+          //   handleMenuClose('EBS Volumes');
+          // }}
         >
           <ListItemIcon>
             <img src={menuicon} alt="menu" />
@@ -141,11 +141,11 @@ export default function Component() {
         </MenuItem>
 
         <MenuItem
-          onClick={() => {
-            handleRDS();
+          // onClick={() => {
+          //   handleRDS();
 
-            handleMenuClose('RDS DB Instances');
-          }}
+          //   handleMenuClose('RDS DB Instances');
+          // }}
         >
           <ListItemIcon>
             <img src={menuicon} alt="menu" />
@@ -156,10 +156,10 @@ export default function Component() {
         </MenuItem>
 
         <MenuItem
-          onClick={() => {
-            handlelambda();
-            handleMenuClose('Lambda functions');
-          }}
+          // onClick={() => {
+          //   handlelambda();
+          //   handleMenuClose('Lambda functions');
+          // }}
         >
           <ListItemIcon>
             <img src={menuicon} alt="menu" />
@@ -171,11 +171,11 @@ export default function Component() {
 
 
 
-        {/* <MenuItem
-          onClick={() => {
-            handleCostNavigate();
-            handleMenuClose('Auto Scaling groups');
-          }}
+        <MenuItem
+          // onClick={() => {
+          //   handleCostNavigate();
+          //   handleMenuClose('Auto Scaling groups');
+          // }}
         >
           <ListItemIcon>
             <img src={menuicon} alt="menu" />
@@ -183,7 +183,7 @@ export default function Component() {
           <Typography variant="body1" sx={{ color: '#3730A3' }}>
             Auto Scaling groups
           </Typography>
-        </MenuItem> */}
+        </MenuItem>
       </Menu>
     </>
   );

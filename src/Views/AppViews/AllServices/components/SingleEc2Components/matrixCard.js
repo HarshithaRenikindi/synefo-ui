@@ -67,9 +67,9 @@ const data = [
   {
     icon: costicon,
     title: "Overall Cost",
-    amount: "Synetiks",
-    // change: "10%",
-    // direction: "up",
+    amount: "$4,383",
+    change: "10%",
+    direction: "up",
     showChange: true,
     backgroundColor: "#8676FF"
   },
