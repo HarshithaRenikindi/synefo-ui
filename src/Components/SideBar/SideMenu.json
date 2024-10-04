@@ -48,9 +48,10 @@
       "name": "WAFR"
     },
     {
-      "link": "/new-reports/over-view-dashboard",
+      "link":  "#",
+
       "icon": "report",
-      "name": "Reports"
+      "name": "Reports(Coming Soon)"
     },
     {
       "link": "/llm",
