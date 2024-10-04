@@ -25,7 +25,6 @@ class ConfigureAmazonEC2 extends Component {
         loading: true, // To show loading state
         error: null, // Error message for fetching data
         operatingSystem: "", // Store selected OS
-        instanceType: ''
       };
     }
   
@@ -39,9 +38,9 @@ class ConfigureAmazonEC2 extends Component {
         this.fetchInstanceData();
     }
 
-    fetchInstanceData = async (instanceType) => {
+    fetchInstanceData = async () => {
         try {
-            const response = await axios.get(`https://gxfwk81zq7.execute-api.us-east-1.amazonaws.com/dev/ec2/price?instanceType=${instanceType}`);
+            const response = await axios.get('https://gxfwk81zq7.execute-api.us-east-1.amazonaws.com/dev/ec2/price?instanceType=t');
             this.setState({
                 instanceData: response.data,  // Save full instance data
                 filteredInstances: response.data, // Initially, display all instances
@@ -61,32 +60,19 @@ class ConfigureAmazonEC2 extends Component {
         });
     };
 
-    // handleSearchChange = (event) => {
-    //     const { value } = event.target;
-    //     this.setState({ instanceType: value });
-    
-    //     // Filter the instances based on the search input
-    //     const filteredInstances = this.state.instanceData.filter(instance =>
-    //         instance.instanceType.toLowerCase().includes(value.toLowerCase())
-    //     );
-    
-    //     this.setState({ filteredInstances });
-    //     await this.fetchInstanceData(value); 
-    // };
-
-    handleSearchChange = async (event) => {
+    handleSearchChange = (event) => {
         const { value } = event.target;
         this.setState({ instanceType: value });
 
-        if (value.trim() === '') {
-            // If input is empty, reset filteredInstances to display all instances
-            this.setState({ filteredInstances: this.state.instanceData });
-        } else {
-            // Call fetchInstanceData only when there's input
-            await this.fetchInstanceData(value);
-        }
-    };
-    
+        // Filter instances based on the instance type input
+        const filteredInstances = this.state.instanceData.filter(instance =>
+            instance.instanceType.toLowerCase().includes(value.toLowerCase()) // Match with instanceType field
+        );
+
+        // Update the filtered instances
+        this.setState({ filteredInstances });
+    }
+
     // Handle checkbox selection
     handleCheckboxChange = (instanceType) => {
         this.setState(prevState => {
@@ -201,7 +187,7 @@ class ConfigureAmazonEC2 extends Component {
                     </div>
                 </div>
 
-                {/* Number of Instances
+                {/* Number of Instances */}
                 <div className="mb-6 max-w-[850px]">
                     <div className="flex items-center justify-between mb-2">
                         <label htmlFor="numberOfInstances" className="block ">
@@ -217,7 +203,7 @@ class ConfigureAmazonEC2 extends Component {
                         placeholder="Please specify the total number of instances that you need each month."
                         className="w-full p-2 border border-gray-300 rounded"
                     />
-                </div> */}
+                </div>
 
                 {/* Chosen Instance Type */}
                 <div className="mb-6">
@@ -245,16 +231,14 @@ class ConfigureAmazonEC2 extends Component {
                     <input
                         type="text"
                         name="instanceType"
-                        value={this.state.instanceType}
+                        value={instanceType}
                         onChange={this.handleSearchChange}
                         placeholder="Enter instance type"
-                        className="w-full p-2 border border-gray-300 rounded"
+                        className="w-full p-2 border border-gray-300 rounded" // Added text-right class for right-aligned text
                     />
                 </div>
 
-               
-
-                {/* Dropdowns
+                {/* Dropdowns */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                     <div>
                         <label htmlFor="instanceFamily" className="block mb-2">
@@ -267,13 +251,7 @@ class ConfigureAmazonEC2 extends Component {
                             className="w-full p-2 border border-gray-300 rounded"
                         >
                             <option>Any instance family</option>
-                            <option>Demo-729485629466</option>
-                            <option>Demo-682746284958</option>
-                            <option>Demo-695292374035</option>
-                            <option>Dev Demo-698275478627</option>
-                            <option>Demo-039485729497</option>
-                            
-                            
+                            {/* Add more options here as needed */}
                         </select>
                     </div>
 
@@ -288,13 +266,7 @@ class ConfigureAmazonEC2 extends Component {
                             className="w-full p-2 border border-gray-300 rounded"
                         >
                             <option>Any vCPUs</option>
-                            <option>1 vCPU</option>
-                            <option>2 vCPUs</option>
-                            <option>3 vCPUs</option>
-                            <option>4 vCPUs</option>
-                            <option>5 vCPUs</option>
-                            <option>6 vCPUs</option>
-                            <option>7 vCPUs</option>
+                            {/* Add more options here as needed */}
                         </select>
                     </div>
 
@@ -308,20 +280,14 @@ class ConfigureAmazonEC2 extends Component {
                             onChange={this.handleInputChange}
                             className="w-full p-2 border border-gray-300 rounded"
                         >
-                            <option>Any Memory Type</option>
-                            <option>2 GiB</option>
-                            <option>4 GiB</option>
-                            <option>8 GiB</option>
-                            <option>16 GiB</option>
-                            <option>32 GiB</option>
-                            <option>64 GiB</option>
-                            
+                            <option>Any instance family</option>
+                            {/* Add more options here as needed */}
                         </select>
                     </div>
-                </div>*/}
+                </div>
 
                 {/* Network Performance */}
-                {/* <div className="mb-6">
+                <div className="mb-6">
                     <label htmlFor="networkPerformance" className="block mb-2">
                         Network Performance
                     </label>
@@ -330,11 +296,11 @@ class ConfigureAmazonEC2 extends Component {
                         value={this.state.networkPerformance}
                         onChange={this.handleInputChange}
                         className="w-full p-2 border border-gray-300 rounded"
-                    > */}
-                        {/* <option>Any network performance</option> */}
+                    >
+                        <option>Any network performance</option>
                         {/* Add more options here as needed */}
-                    {/* </select>
-                </div>  */}
+                    </select>
+                </div>
 
                 {/* Show current generation instances */}
                 <div className="mb-6">
@@ -358,7 +324,7 @@ class ConfigureAmazonEC2 extends Component {
                                 <th className="py-2 px-4 border-b">Instance Type</th>
                                 <th className="py-2 px-4 border-b">vCPUs</th>
                                 <th className="py-2 px-4 border-b">Memory</th>
-                                <th className="py-2 px-4 border-b">Networ Performance</th>
+                                <th className="py-2 px-4 border-b">Network Performance</th>
                                 <th className="py-2 px-4 border-b">Storage</th>
                                 <th className="py-2 px-4 border-b">Current Generation</th>
                             </tr>
@@ -377,11 +343,11 @@ class ConfigureAmazonEC2 extends Component {
                                             <span className="ml-2">{instance.instanceType}</span> {/* Instance type next to the checkbox */}
                                         </div>
                                     </td>
-                                    <td className="py-2 px-4 border-b text-justify">{instance.vCPUs}</td>
-                                    <td className="py-2 px-4 border-b text-start">{instance.memory}</td>
+                                    <td className="py-2 px-4 border-b text-center">{instance.vCPUs}</td>
+                                    <td className="py-2 px-4 border-b text-center">{instance.memory}</td>
                                     <td className="py-2 px-4 border-b">{instance.networkPerformance}</td>
                                     <td className="py-2 px-4 border-b">{instance.storage}</td>
-                                    <td className="py-2 px-4 border-b text-start">{instance.currentGeneration ? 'Yes' : 'No'}</td>
+                                    <td className="py-2 px-4 border-b text-center">{instance.currentGeneration ? 'Yes' : 'No'}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -394,7 +360,7 @@ class ConfigureAmazonEC2 extends Component {
                     <p className="mb-4 text-black">Estimated commitment price based on the following selections:</p>
                     <div className="flex flex-wrap mb-4">
                         <p className="mr-4 text-black"><strong>Instance Type:</strong> {instanceType}</p>
-                        {/* <p className="mr-4 text-black"><strong>Operating System:</strong> {operatingSystem || 'Not selected'}</p> */}
+                        <p className="mr-4 text-black"><strong>Operating System:</strong> {operatingSystem || 'Not selected'}</p>
                     </div>
                 </div>
 

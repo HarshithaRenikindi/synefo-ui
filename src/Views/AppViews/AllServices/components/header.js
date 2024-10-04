@@ -1,8 +1,105 @@
-
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import awsIcon from "../../../../assets/img/assetmanagement/aws.svg";
+import AlertPopup from "./AlertPopup"; // Adjust the import path as necessary
 
 const Header = () => {
+  const [isPopupOpen, setPopupOpen] = useState(false);
+  const [message, setMessage] = useState(""); // State for displaying API messages
+  const [messageType, setMessageType] = useState(""); // State for message type (success/error)
+  const [connectionUrl, setConnectionUrl] = useState(""); // State for connection URL
+  const [instanceStatus, setInstanceStatus] = useState("stopped"); // Track instance status
+  const instanceName = "test-mgt";
+
+  const togglePopup = () => {
+    setPopupOpen(!isPopupOpen);
+  };
+
+  const handleAlert = async (instanceName) => {
+    const alertData = {
+      instance_name: instanceName,
+      cpu_threshold: 75,
+      memory_threshold: 2048000000,
+      storage_threshold: 80,
+      network_in_threshold: 5000000000,
+      network_out_threshold: 5000000000,
+    };
+
+    // Uncomment and use the alert API if needed
+    // try {
+    //   const response = await axios.post('https://your-api-url/alarms', alertData);
+    //   console.log("Alert sent successfully:", response.data);
+    //   setMessage(response.data.message); // Assuming the response has a message field
+    //   setMessageType("success"); // Set message type to success
+    // } catch (error) {
+    //   console.error("Error sending alert:", error);
+    //   setMessage(error.response.data.message || "Error sending alert."); // Use the error message if available
+    //   setMessageType("error"); // Set message type to error
+    // }
+  };
+
+  const handleStart = async () => {
+    try {
+      const response = await axios.get(`https://0k452b5cc3.execute-api.us-east-1.amazonaws.com/dev/ec2/start?instance_id=i-068be6cc8c0087aa1`);
+      console.log("Instance started successfully:", response.data);
+      setMessage(response.data.message); // Display the success message from the response
+      setMessageType("success"); // Set message type to success
+      setInstanceStatus("running"); // Update status to running
+    } catch (error) {
+      console.error("Error starting instance:", error);
+      setMessage(error.response.data.message || "Failed to start instance."); // Use the error message if available
+      setMessageType("error"); // Set message type to error
+    }
+  };
+
+  const handleStop = async () => {
+    try {
+      const response = await axios.get(`https://0k452b5cc3.execute-api.us-east-1.amazonaws.com/dev/ec2/stop?instance_id=i-068be6cc8c0087aa1`);
+      console.log("Instance  wil be stopped successfully in sometime:", response.data);
+      setMessage(response.data.message); // Display the success message from the response
+      setMessageType("success"); // Set message type to success
+      setInstanceStatus("stopped"); // Update status to stopped
+    } catch (error) {
+      console.error("Error stopping instance:", error);
+      setMessage(error.response.data.message || "Failed to stop instance."); // Use the error message if available
+      setMessageType("error"); // Set message type to error
+    }
+  };
+
+  const handleConnect = async () => {
+    try {
+      const connectData = {
+        instance_name: instanceName,
+      };
+      const response = await axios.get('https://0k452b5cc3.execute-api.us-east-1.amazonaws.com/dev/ec2/connect?instance_id=i-068be6cc8c0087aa1', connectData);
+      
+      console.log("Connect request sent successfully:", response.data);
+      
+      // Set the connection URL from the response
+      setConnectionUrl(response.data.connection_url);
+      setMessage(response.data.message); // Display the success message from the response
+      setMessageType("success"); // Set message type to success
+    } catch (error) {
+      console.error("Error sending connect request:", error);
+      setMessage(error.response.data.message || "Instance is stopped. Please start the instance to connect."); // Use the error message if available
+      setMessageType("error"); // Set message type to error
+    }
+  };
+
+  const handleReboot = async () => {
+    try {
+      const response = await axios.get(`https://0k452b5cc3.execute-api.us-east-1.amazonaws.com/dev/ec2/reboot?instance_id=i-068be6cc8c0087aa1`);
+      console.log("Instance rebooted successfully:", response.data);
+      setMessage(response.data.message); // Display the success message from the response
+      setMessageType("success"); // Set message type to success
+      setInstanceStatus("running"); // Update status to running after reboot
+    } catch (error) {
+      console.error("Error rebooting instance:", error);
+      setMessage(error.response.data.message || "Instance i-068be6cc8c0087aa1 is in stopped state. Only running instances can be rebooted."); // Use the error message if available
+      setMessageType("error"); // Set message type to error
+    }
+  };
+
   return (
     <div className="p-4 bg-white">
       {/* Top Section: Logo, Title, and Down Arrow */}
@@ -15,31 +112,57 @@ const Header = () => {
             Amazon Web Services
           </h6>
         </div>
-       
         <div className="flex space-x-4">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-1 px-4 rounded">
+          <button
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-1 px-4 rounded"
+            onClick={handleStart}
+          >
             Start
           </button>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-1 px-4 rounded">
+          <button
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-1 px-4 rounded"
+            onClick={handleStop}
+          >
             Stop
           </button>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-1 px-4 rounded">
+          <button
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-1 px-4 rounded"
+            onClick={handleConnect}
+            // disabled={instanceStatus === "stopped"} // Disable if stopped
+          >
             Connect
           </button>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-1 px-4 rounded">
+          <button
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-1 px-4 rounded"
+            onClick={handleReboot}
+            // disabled={instanceStatus === "stopped"} // Disable if stopped
+          >
             Reboot
           </button>
-          {/* <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
-            Alert
-          </button> */}
         </div>
       </div>
+
+      {/* Message Display */}
+      {message && (
+        <div className={`my-2 p-2 border rounded ${messageType === "error" ? "bg-red-100 border-red-400 text-red-700" : "bg-green-100 border-green-400 text-green-700"}`}>
+          {message}
+        </div>
+      )}
+
+      {/* Display the Connection URL if available */}
+      {connectionUrl && (
+        <div className="my-2 p-2 bg-blue-100 border border-blue-400 text-blue-700 rounded">
+          <a href={connectionUrl} target="_blank" rel="noopener noreferrer" className="underline">
+            Click here to connect to the instance
+          </a>
+        </div>
+      )}
 
       {/* Horizontal Line */}
       <hr className="my-3" />
 
       {/* Bottom Section: Breadcrumbs and Alerts */}
-      <div className="flex justify-between items-center ">
+      <div className="flex justify-between items-center">
         {/* Breadcrumb Navigation */}
         <nav className="flex space-x-1 text-gray-600">
           <a href="/" className="hover:text-blue-600">
@@ -58,7 +181,13 @@ const Header = () => {
         </nav>
 
         {/* Alerts Button */}
-        <button className="flex items-center text-blue-600 hover:bg-white">
+        <button
+          className="flex items-center text-blue-600 hover:bg-white"
+          onClick={() => {
+            handleAlert(instanceName);
+            togglePopup(); // Show popup
+          }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5 mr-1"
@@ -70,6 +199,9 @@ const Header = () => {
           Alerts
         </button>
       </div>
+
+      {/* Popup for Alerts */}
+      {isPopupOpen && <AlertPopup onClose={togglePopup} initialInstanceName={instanceName} />}
     </div>
   );
 };

@@ -17,11 +17,11 @@ const EBSRecommendations = () => {
             <Typography
               variant="h6"
               component="div"
-              className="text-indigo-600 font-bold"
+              className="text-indigo-600 font-bold p-6"
               style={{ color: '#383874' }}
               sx={{ fontFamily: 'Poppins' }}
             >
-              Cost
+              EBS Recommendations
             </Typography>
           </div>
           <div className="flex items-center">
