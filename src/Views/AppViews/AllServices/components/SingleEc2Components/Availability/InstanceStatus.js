@@ -159,7 +159,7 @@ const InstanceStatus = () => {
         </div>
         
         {/* Chart Section */}
-        <div className='flex'>
+        <div className='flex justify-between w-full'>
 
         <div className="relative w-32 h-32">
           <Doughnut data={data} options={options} />
@@ -167,7 +167,6 @@ const InstanceStatus = () => {
         <p className="text-green-600 font-semibold text-lg mt-2">Instance Status</p>
         <p className="text-green-600">Running</p>
         </div>
-        
 
         <div className="text-sm mt-6 lg:mt-0 lg:ml-8">
         <div className="grid grid-cols-1 gap-4">
