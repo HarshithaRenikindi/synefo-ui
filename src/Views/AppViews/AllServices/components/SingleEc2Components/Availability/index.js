@@ -4,7 +4,10 @@ import InstanceStatus from './InstanceStatus'
 const index = () => {
   return (
     <div>
-        <InstanceStatus />
+        <div className='flex'>
+            <InstanceStatus />
+
+        </div>
     </div>
   )
 }
