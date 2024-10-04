@@ -79,14 +79,16 @@ export default function RegionWiseResourcesTable() {
   ];
 
   const cellStyle = {
-    padding: '10px 4px',
+    padding: '5px 3px',
     color: '#383874',
+    fontSize: '9px',
+
   };
   
   return (
     <div className="p-1">
-      <TableContainer className="h-80">
-        <Table size="small" stickyHeader>
+      <TableContainer className="h-96">
+        <Table  stickyHeader>
           <TableHead>
             <TableRow>
               <TableCell sx={{ ...cellStyle, fontWeight: '700',textTransform:'uppercase' ,fontFamily: 'Roboto, sans-serif'}} >REGION</TableCell>
