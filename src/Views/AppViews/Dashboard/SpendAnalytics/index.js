@@ -891,6 +891,7 @@ class SpendAnalytics extends Component {
       <Typography variant="h6" sx={{ marginRight: 1 ,}} style={{ fontSize: '0.75rem'}}>10%</Typography>
 
     </Box>
+    <ChatBotGreeting/>
               </Box>
             </Grid>
           </Box>
