@@ -60,8 +60,8 @@ class CreateWorkloadForm extends Component {
             console.log('Workload created successfully:', response);
             ToastMessage.success("Workload created successfully")
         } catch (error) {
-            console.error('Error creating workload:', error.response.data );
-             if(error.response.data === 'An error occurred: An error occurred (ConflictException) when calling the CreateWorkload operation: [Conflict] A workload with name workloadtest2 already exists.'){
+            console.error('Error creating workload:', error.response );
+             if(error.response === 'An error occurred: An error occurred (ConflictException) when calling the CreateWorkload operation: [Conflict] A workload with name workloadtest2 already exists.'){
                 console.log('this is already exist');
                 ToastMessage.error("Workload with same Name Exists")
                 

@@ -165,8 +165,6 @@
 
 // export default WorkloadsTable;
 
-
-
 import React, { Component } from 'react';
 import {
   Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, Box, Typography
@@ -176,42 +174,43 @@ import { Link } from 'react-router-dom';
 import { APP_PREFIX_PATH } from 'Configs/AppConfig';
 import axios from 'axios';
 
-// Define constants for message and API URL
 const NO_WORKLOADS_MESSAGE = "There are no workloads.";
-const API_URL = `https://dpgg16uo5d.execute-api.us-east-1.amazonaws.com/dev/show_workload?AccountId=657907747545`;
+const API_URL = `https://fq4qnqsxxf.execute-api.us-east-1.amazonaws.com/dev/show_workload?AccountId=657907747545`;
 
 class WorkloadsTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
       workloads: [], // Default to an empty array
+      error: null,   // Added error state to handle API call failure
     };
   }
 
   componentDidMount() {
-    this.fetchWorkloads();
+    this.fetchWorkloads(); // Call the API on mount
   }
 
-  // Axios function to fetch API data
+  // Function to fetch workload data
   fetchWorkloads = async () => {
     try {
       const response = await axios.get(API_URL);
-      const workloadsWithStates = this.addStateToWorkloads(response.data); // Add 'states' key
-      this.setState({ workloads: workloadsWithStates });
-      console.log("Fetched data:", response.data);
+      const workloadsWithStates = this.addStateToWorkloads(response.data); // Add 'states' key to workloads
+      this.setState({ workloads: workloadsWithStates }); // Set the fetched data into the state
     } catch (error) {
-      this.setState({ error: 'Failed to fetch workloads' });
+      this.setState({ error: 'Failed to fetch workloads' }); // Handle error case
       console.error('Error fetching workloads:', error);
     }
   };
 
+  // Add 'Pending' state to workloads
   addStateToWorkloads = (workloads) => {
     return workloads.map((workload) => ({
-      ...workload,
-      states: 'Pending', // Add the new 'states' key with the value 'Pending'
+      ...workload,          
+      states: 'Pending',    // Add the 'states' key with 'Pending'
     }));
   };
 
+  // Function to render status badges based on workload state
   renderStatusBadge(status) {
     const styles = {
       Pending: { backgroundColor: '#ffcc00', color: '#ffffff', padding: '3px 8px', borderRadius: '4px' },
@@ -227,7 +226,7 @@ class WorkloadsTable extends Component {
   }
 
   render() {
-    const { workloads } = this.state;
+    const { workloads, error } = this.state;
 
     return (
       <Box p={3}>
@@ -247,22 +246,28 @@ class WorkloadsTable extends Component {
             <TableHead>
               <TableRow>
                 <TableCell><strong>Workloads</strong></TableCell>
-                <TableCell><strong>Assessments States</strong></TableCell>
-                <TableCell><strong>Last Uploaded</strong></TableCell>
+                <TableCell><strong>Assessment Status</strong></TableCell>
+                <TableCell><strong>Last Updated</strong></TableCell>
                 <TableCell><strong>Actions</strong></TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {workloads.length === 0 ? (
+              {error ? (
                 <TableRow>
-                  <TableCell colSpan={5} align="center">
+                  <TableCell colSpan={4} align="center">
+                    <Typography variant="body1" color="error">{error}</Typography>
+                  </TableCell>
+                </TableRow>
+              ) : workloads.length === 0 ? (
+                <TableRow>
+                  <TableCell colSpan={4} align="center">
                     <Typography variant="body1" color="textSecondary">{NO_WORKLOADS_MESSAGE}</Typography>
                   </TableCell>
                 </TableRow>
               ) : (
                 workloads.map((workload) => (
                   <TableRow key={workload.WorkloadId}>
-                    <TableCell sx={{color:'blue' }}>
+                    <TableCell sx={{ color: 'blue' }}>
                       <Link to={`${APP_PREFIX_PATH}/wafr/workload/${workload.WorkloadId}`}>
                         {workload.WorkloadId}
                       </Link>
