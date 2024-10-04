@@ -5,6 +5,10 @@ import MetricCards from './matrixCard';
 import TabNavigation from './TabNavigations';
 import Performance from './Performance';
 import Availability from './Availability';
+import Reliability from './Reliability';
+import EndUsage from './EndUsage';
+import Compliance from './Compliance';
+import DataProtection from './DataProtection';
 
 
 const SingleEc2 = () => {
@@ -27,11 +31,10 @@ const SingleEc2 = () => {
       {/* Conditional Rendering Based on Active Tab */}
       {activeTab === 'Performance' && <Performance />}
       {activeTab === 'Availability' && <Availability />}
-      {activeTab === 'Reliability' && <div>Reliability Page</div>}
-      {activeTab === 'End Usage' && <div>End Usage Page</div>}
-      {activeTab === 'Compliance' && <div>Compliance Page</div>}
-      {activeTab === 'Data Protection' && <div>Data Protection Page</div>}
-
+      {activeTab === 'Reliability' && <Reliability />}
+      {activeTab === 'End Usage' && <EndUsage />}
+      {activeTab === 'Compliance' && <Compliance />}
+      {activeTab === 'Data Protection' && <DataProtection />}
 
     </Box>
   );
