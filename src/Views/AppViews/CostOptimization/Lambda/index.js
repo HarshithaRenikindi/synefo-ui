@@ -14,9 +14,9 @@ const Ec2Recommendations = () => {
         <Toolbar className="justify-between">
           <div className="flex items-center">
             <Typography
-              variant="h6"
+              variant="h5"
               component="div"
-              className="text-indigo-600 font-bold"
+              className="text-indigo-600 font-bold p-6"
               style={{ color: '#383874' }}
               sx={{ fontFamily: 'Poppins' }}
             >

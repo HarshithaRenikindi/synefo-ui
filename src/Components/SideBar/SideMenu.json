@@ -30,6 +30,11 @@
         {
           "link": "/assets/assetmanagement",
           "name": "Discovered Assets"
+        },
+        {
+          "link": "/alerts",
+          "icon": "alert",
+          "name": "Alerts"
         }
       ]
     },
