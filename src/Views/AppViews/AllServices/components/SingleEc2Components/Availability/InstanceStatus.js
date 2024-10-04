@@ -150,7 +150,7 @@ const InstanceStatus = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between bg-white shadow-md rounded-lg p-6 space-x-0 lg:space-x-6 w-full max-w-5xl mx-auto mt-8">
+    <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between bg-white shadow-md rounded-lg p-6 space-x-0 lg:space-x-6 w-full  mx-auto">
       {/* Left Section: Chart and Status */}
       <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
         <div className='mb-4'>
@@ -161,8 +161,10 @@ const InstanceStatus = () => {
         {/* Chart Section */}
         <div className='flex justify-between w-full'>
 
-        <div className="relative w-32 h-32">
-          <Doughnut data={data} options={options} />
+        <div className="relative ">
+            <div className='h-32'>   
+                <Doughnut data={data} options={options} />
+            </div>
         {/* Status Labels */}
         <p className="text-green-600 font-semibold text-lg mt-2">Instance Status</p>
         <p className="text-green-600">Running</p>

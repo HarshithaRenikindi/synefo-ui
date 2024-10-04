@@ -9,6 +9,7 @@ import Reliability from './Reliability';
 import EndUsage from './EndUsage';
 import Compliance from './Compliance';
 import DataProtection from './DataProtection';
+import Security from './Security';
 
 
 const SingleEc2 = () => {
@@ -35,6 +36,7 @@ const SingleEc2 = () => {
       {activeTab === 'End Usage' && <EndUsage />}
       {activeTab === 'Compliance' && <Compliance />}
       {activeTab === 'Data Protection' && <DataProtection />}
+      {activeTab === 'Security' && <Security />}
 
     </Box>
   );

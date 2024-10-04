@@ -6,18 +6,19 @@ const NavigationTabs = ({ activeTab, setActiveTab }) => {
     'Availability',
     'Reliability',
     'End Usage',
+    'Security',
     'Compliance',
-    'Data Protection',
+    // 'Data Protection',
   ];
 
   return (
-    <div className="flex gap-4 bg-blue-100 rounded-full px-2 items-center justify-start">
+    <div className="flex gap-4 bg-blue-200 rounded-full px-2 items-center justify-start">
       {tabs.map((tab, index) => (
         <button
           key={index}
           onClick={() => setActiveTab(tab)}
           className={`px-6 py-2 text-sm font-medium rounded-full transition-colors duration-300 ${
-            activeTab === tab ? 'bg-blue-600 text-white' : 'text-black hover:bg-gray-200'
+            activeTab === tab ? 'bg-blue-600 text-white' : 'text-black hover:bg-blue-400'
           }`}
         >
           {tab}

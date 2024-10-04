@@ -103,7 +103,7 @@ import EBSPage from './AppViews/CostOptimization/Recommendations/EBSPage';  // P
 import RDSPage from './AppViews/CostOptimization/Recommendations/RDSPage';  // Page for RDS instances
 import LambdaPage from './AppViews/CostOptimization/Recommendations/LambdaPage';
 import ASGPage from './AppViews/CostOptimization/Recommendations/ASGPage';
-
+import LLM from '../Views/AppViews/LLM';
 
 // this are the routes of Price Estimator
 import PriceEstimator from "./AppViews/PriceEstimator";
@@ -200,6 +200,10 @@ export const Views = (props) => {
           <Route
             path={`${APP_PREFIX_PATH}/wafr/assignment/:workloadId`}
             element={<WafrAssesssment />}
+          />
+          <Route
+            path={`${APP_PREFIX_PATH}/llm`}
+            element={<LLM />}
           />
           {/* <Route
             path={`${APP_PREFIX_PATH}/wafr/assignment/:workloadId`}

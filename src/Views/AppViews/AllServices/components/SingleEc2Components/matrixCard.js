@@ -58,51 +58,54 @@
 
 
 import React from 'react';
-import costicon from "assets/img/allservices/costicon.png";
+// import costicon from "assets/img/allservices/costicon.png";
+import Organization from 'assets/img/allservices/organization.png'
 import icon from "assets/img/allservices/Icon.png";
 import inactivity from "assets/img/allservices/inactivity-Icon.png";
 import CircularProgress from '../Circularprogress';
+import cost from "assets/img/allservices/cost.png"
 
 const data = [
   {
-    icon: costicon,
-    title: "Overall Cost",
+    icon: Organization,
+    title: "Organization Unit",
     amount: "Synetiks",
     // change: "10%",
     // direction: "up",
     showChange: true,
-    backgroundColor: "#8676FF"
+    backgroundColor: "#fff"
   },
   {
     icon: icon,
-    title: "Active Instances",
+    title: "Hosted Services",
     amount: "002",
     showChange: false,
     backgroundColor: "#8676FF"
   },
   {
     icon: inactivity,
-    title: "Inactivity Instances",
+    title: "Configuration",
     amount: "ID:i-0123456",
     showChange: false,
     backgroundColor: "#3697EF"
   },
   {
     icon: <CircularProgress progress={48.3} size={48} strokeWidth={4} />,
-    title: 'Error Rate',
-    amount: "48.3%",
-    change: "10%",
-    direction: "up",
-    showChange: true,
+    title: 'SLA',
+    amount: "83.66%",
+    // change: "10%",
+    // direction: "up",
+    // showChange: true,
     backgroundColor: "#8676FF"
   },
-  // {
-  //   icon: throtles,
-  //   title: "Throttles Request",
-  //   amount: "04",
-  //   showChange: false,
-  //   backgroundColor: "#8676FF"
-  // },
+  {
+    icon: cost,
+    title: "Cost",
+    amount: "$43,833",
+    direction: "up",
+    showChange: true,
+    backgroundColor: "#53CA43"
+  },
 
 ];
 
@@ -114,7 +117,7 @@ const CardComponentTailwind = () => {
           key={index}
           className="flex items-center bg-white  rounded-lg p-1 flex-1"
         >
-          <div className="rounded-lg p-2 flex justify-center items-center">
+          <div className={`rounded-lg p-2 flex justify-center items-center `}>
             {typeof item.icon === 'string' ? (
               <img
                 src={item.icon}

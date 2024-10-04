@@ -29,11 +29,6 @@
         {
           "link": "/assets/price-estimator",
           "name": "priceEstimator"
-        },
-        {
-          "link": "/alerts",
-          "icon": "alert",
-          "name": "Alerts"
         }
       ]
     },
