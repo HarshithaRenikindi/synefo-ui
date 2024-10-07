@@ -94,6 +94,7 @@ import CreateWorkloadForm from "./AppViews/Wafr/CreateWorkLoad";
 import WorkLoad from "./AppViews/Wafr/workLoad"
 import WafrAssesssment from "./AppViews/Wafr/WafrAssesssment"
 // import EC2InstanceSummary from "./AppViews/AllServices/components/instancesummary";
+// import Test from '../Test'
 
 //These are the Cost Optimization Routes
 import Costoptimization from './AppViews/CostOptimization/index';  // Main resource dashboard
@@ -102,12 +103,12 @@ import EBSPage from './AppViews/CostOptimization/Recommendations/EBSPage';  // P
 import RDSPage from './AppViews/CostOptimization/Recommendations/RDSPage';  // Page for RDS instances
 import LambdaPage from './AppViews/CostOptimization/Recommendations/LambdaPage';
 import ASGPage from './AppViews/CostOptimization/Recommendations/ASGPage';
-
+import LLM from '../Views/AppViews/LLM';
 
 // this are the routes of Price Estimator
 import PriceEstimator from "./AppViews/PriceEstimator";
 import ConfigureSetup from "./AppViews/PriceEstimator/configure-fields";
-// import ConfigureAmazonEC2 from "./AppViews/PriceEstimator/Configure-Amazon-EC2";
+import ConfigureAmazonEC2 from "./AppViews/PriceEstimator/Configure-Amazon-EC2";
 import Availability from "./AppViews/AllServices/availabilityandenduser"
 import AssetManagement from "./AppViews/AssetManagement";
 import Autoscale from "./AppViews/AllServices/autoscale"
@@ -200,6 +201,10 @@ export const Views = (props) => {
             path={`${APP_PREFIX_PATH}/wafr/assignment/:workloadId`}
             element={<WafrAssesssment />}
           />
+          <Route
+            path={`${APP_PREFIX_PATH}/llm`}
+            element={<LLM />}
+          />
           {/* <Route
             path={`${APP_PREFIX_PATH}/wafr/assignment/:workloadId`}
             element={<SingleEc2 />}
@@ -238,10 +243,10 @@ export const Views = (props) => {
             path={`${APP_PREFIX_PATH}/assets/price-estimator/configure-setup`}
             element={<ConfigureSetup />}
           />
-          {/* <Route
+          <Route
             path={`${APP_PREFIX_PATH}/assets/price-estimator/configure-amazon-ec2`}
             element={<ConfigureAmazonEC2 />}
-          /> */}
+          />
           <Route
             path={`${APP_PREFIX_PATH}/assets/environments/environmentlist`}
             element={<EnvironmentList />}
@@ -258,6 +263,10 @@ export const Views = (props) => {
             path={`${APP_PREFIX_PATH}/dashboard`}
             element={<Dashboard />}
           />
+          {/* <Route
+            path={`${APP_PREFIX_PATH}/dashboard`}
+            element={<Test />}
+          /> */}
           <Route
             path={`${APP_PREFIX_PATH}/assets/environments/aws/newaccountsetup/:departmentId?`}
             element={<NewAccountSetup />}
@@ -615,3 +624,6 @@ export const Views = (props) => {
 };
 
 export default withRouter(Views);
+
+
+

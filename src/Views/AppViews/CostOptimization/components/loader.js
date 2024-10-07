@@ -161,12 +161,12 @@ const CircularProgress = ({ percentage, color }) => (
 );
 
 const Card = ({ title, percentage, total, change, color, resources }) => (
-  <div className="bg-white rounded-lg shadow-md p-4 w-full sm:w-64 md:w-72 flex flex-col">
-    <div className="flex items-center justify-between mb-4">
+  <div className="bg-white rounded-lg shadow-md p-4 w-full sm:w-64  flex flex-col">
+    <div className="flex items-center justify-start gap-2 mb-4">
       <CircularProgress percentage={percentage} color={color} />
-      <div className="text-right">
+      <div className="text-left ">
         <h2 className="text-lg font-semibold" style={{ fontSize: "16px", color: '#383874' }}>{title}</h2>
-        <div className="flex justify-between items-baseline">
+        <div className="flex justify-start items-baseline">
           <p className="text-xl sm:text-2xl font-bold" style={{ color: '#383874' }}>{total}</p>
           <p className="text-sm text-green-500 ml-2">▲ {change}%</p>
         </div>
@@ -189,35 +189,35 @@ export default function Component() {
     {
       title: "Under Utilize",
       percentage: 20,
-      total: 1082,
+      total: 0,
       change: 10,
       color: "text-purple-500",
       resources: [
         { name: "EC2", count: "00" },
-        { name: "EBS", count: "02" },
-        { name: "RDS DB", count: "03" },
-        { name: "Lambda", count: "03" },
-        { name: "Auto Scaling", count: "01" },
+        { name: "EBS", count: "00" },
+        { name: "RDS DB", count: "00" },
+        { name: "Lambda", count: "00" },
+        { name: "Auto Scaling", count: "00" },
       ],
     },
     {
-      title: "Over-provisioned",
+      title: "Over provisioned",
       percentage: 19,
-      total: 833,
+      total: 0,
       change: 10,
       color: "text-orange-500",
       resources: [
-        { name: "EC2", count: "04" },
-        { name: "EBS", count: "01" },
-        { name: "RDS DB", count: "00" },
+        { name: "EC2", count: "02" },
+        { name: "EBS", count: "00" },
+        { name: "RDS DB", count: "01" },
         { name: "Lambda", count: "00" },
-        { name: "Auto Scaling", count: "01" },
+        { name: "Auto Scaling", count: "00" },
       ],
     },
     {
       title: "Needs Optimization",
       percentage: 32,
-      total: 3833,
+      total: 0,
       change: 10,
       color: "text-green-500",
       resources: [
@@ -231,7 +231,7 @@ export default function Component() {
     {
       title: "Abandoned",
       percentage: 29,
-      total: 3264,
+      total: 0,
       change: 10,
       color: "text-pink-500",
       resources: [
@@ -245,12 +245,12 @@ export default function Component() {
   ];
 
   return (
-    <div className="flex flex-wrap justify-start gap-4 p-4 bg-gray-100 h-30">
-      <div className="flex flex-row flex-wrap justify-start gap-1">
+    // <div className="flex flex-wrap justify-start gap-4 p-8 bg-gray-100 h-30">
+      <div className="flex flex-row flex-wrap justify-between gap-6 p-8">
         {cards.map((card, index) => (
           <Card key={index} {...card} />
         ))}
       </div>
-    </div>
+    // </div>
   );
 }

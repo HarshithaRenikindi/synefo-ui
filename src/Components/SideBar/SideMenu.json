@@ -20,16 +20,15 @@
         },
         {
           "link": "/assets/AllServices",
-
           "name": "All Services"
+        },
+        {
+          "link": "/assets/assetmanagement",
+          "name": "Asset Management"
         },
         {
           "link": "/assets/price-estimator",
           "name": "priceEstimator"
-        },
-        {
-          "link": "/assets/assetmanagement",
-          "name": "Discovered Assets"
         }
       ]
     },
@@ -44,9 +43,10 @@
       "name": "WAFR"
     },
     {
-      "link": "/new-reports/over-view-dashboard",
+      "link":  "#",
+
       "icon": "report",
-      "name": "Reports"
+      "name": "Reports(Coming Soon)"
     },
     {
       "link": "/llm",
@@ -61,4 +61,3 @@
     
   ]
 }
-

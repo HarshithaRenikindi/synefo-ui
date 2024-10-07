@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create an Axios instance
 const apiClient = axios.create({
-    baseURL: 'https://dpgg16uo5d.execute-api.us-east-1.amazonaws.com/dev/create-workload', // Base URL
+    baseURL: 'https://fq4qnqsxxf.execute-api.us-east-1.amazonaws.com/dev/create-workload', // Base URL
     headers: {
         'Content-Type': 'application/json', // Ensure that you're sending JSON
         // You can add authorization headers or other headers if needed

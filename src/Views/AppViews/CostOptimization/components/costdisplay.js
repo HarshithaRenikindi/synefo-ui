@@ -2,16 +2,16 @@ import React from 'react';
 
 const CostSummaryBar = ({ totalCost, totalSpend }) => {
   return (
-    <div className="flex justify-start items-center bg-white rounded-lg shadow-sm p-4 mx-6">
+    <div className="flex justify-start items-center bg-white rounded-lg shadow-sm p-6 mx-6">
 
   <div className="flex items-center space-x-4">
     <span className="text-indigo-900 text-l">Total Cost</span>
-    <span className="text-indigo-900 text-l" style={{ marginLeft: '12px' }}>${totalCost}</span>
+    <span className="text-indigo-900 text-l" style={{ marginLeft: '12px' }}>$0</span>
   </div>
-  <div className="w-px h-8 bg-gray-300 mx-4"></div> {/* Add margin on x-axis */}
+  <div className="w-px h-8 bg-gray-300 mx-8"></div> {/* Add margin on x-axis */}
   <div className="flex items-center space-x-4">
     <span className="text-indigo-900 text-l">Total Spend</span>
-    <span className="text-indigo-900 text-l">${totalSpend}</span>
+    <span className="text-indigo-900 text-l">$0</span>
   </div>
 </div>
 

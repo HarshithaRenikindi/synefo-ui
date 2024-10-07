@@ -41,16 +41,18 @@ class CreateWorkloadForm extends Component {
         event.preventDefault(); // Prevent the form from reloading the page
         const { workloadName, workloadOwner, lens, awsAccount, environment, description, } = this.state;
         
+        const lensArray = Array.isArray(lens) ? lens : typeof lens === 'string' ? [lens] : [];
+
         const payload = {
             workload_name: workloadName,
             workload_environment: Array.isArray(environment) && environment.length > 0 ? environment[0] : '',
-            workload_lenses: typeof lens === 'string' ? [lens] : [], 
+            workload_lenses: lensArray, 
             workload_review_owners: workloadOwner ? [workloadOwner] : [],
             workload_description: description,
-            workload_account_ids: [awsAccount], 
+            workload_account_ids: ["657907747545"], 
             // tags: tags.filter(tag => tag.key && tag.value) // Filter out incomplete tags
         };
-        
+        console.log('this is len',lens);
         console.log('Submit Payload:', payload);
         try {
             // Call the API using the createWorkload function
@@ -58,8 +60,8 @@ class CreateWorkloadForm extends Component {
             console.log('Workload created successfully:', response);
             ToastMessage.success("Workload created successfully")
         } catch (error) {
-            console.error('Error creating workload:', error.response.data );
-             if(error.response.data === 'An error occurred: An error occurred (ConflictException) when calling the CreateWorkload operation: [Conflict] A workload with name workloadtest2 already exists.'){
+            console.error('Error creating workload:', error.response );
+             if(error.response === 'An error occurred: An error occurred (ConflictException) when calling the CreateWorkload operation: [Conflict] A workload with name workloadtest2 already exists.'){
                 console.log('this is already exist');
                 ToastMessage.error("Workload with same Name Exists")
                 
@@ -74,6 +76,7 @@ class CreateWorkloadForm extends Component {
 
     handleLensChange = (newLens) => {
         this.setState({ lens: newLens });
+        
     };
 
     handleWorkloadTypeChange = (newWorkloadType) => {
@@ -105,9 +108,9 @@ class CreateWorkloadForm extends Component {
 
     render() {
         const wafrLenses = [
-            " wellarchitected",
-            " connected-mobility",
-            " container-build",
+            "wellarchitected",
+            "connected-mobility",
+            "container-build",
             // Other lenses here...
         ];
 
@@ -115,6 +118,7 @@ class CreateWorkloadForm extends Component {
         const environments = ['PRODUCTION', 'PREPRODUCTION']; // Environments
 
         const { workloadName, workloadOwner, description, isWorkloadResources, istoggle, tags } = this.state;
+      
 
         return (
             <div className="px-8 py-6 bg-white shadow-md rounded-lg w-full">
@@ -266,3 +270,4 @@ class CreateWorkloadForm extends Component {
 }
 
 export default CreateWorkloadForm;
+
