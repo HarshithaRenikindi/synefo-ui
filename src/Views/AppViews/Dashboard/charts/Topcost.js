@@ -43,10 +43,9 @@ class TopServicesCostTable extends React.Component {
 
   render() {
     const cellStyle = {
-      padding: '12px 16px',
+      padding: '12px 10px',
       borderBottom: '1px solid #E8E8F7',
       color: '#383874',
-      fontSize: '9px',
     };
 
     const headerCellStyle = {
@@ -59,7 +58,7 @@ color: '#383874',
     return (
       <div className="p-1">
      
-        <TableContainer className="h-80">
+        <TableContainer >
           <Table size="small" stickyHeader aria-label="services cost table">
             <TableHead>
               <TableRow>

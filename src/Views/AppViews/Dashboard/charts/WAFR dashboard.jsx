@@ -29,7 +29,6 @@ class WAFRDashboard extends React.Component {
     const cellStyle = {
       padding: '10px 5px',
       color: '#383874',
-      fontSize:'9px'
       
     };
 
@@ -58,7 +57,6 @@ class WAFRDashboard extends React.Component {
                         backgroundColor: '#FFA500',
                         color: 'white',
                         fontWeight: 'bold',
-                        fontSize:'9px'
                       }} 
                     />
                   </TableCell>

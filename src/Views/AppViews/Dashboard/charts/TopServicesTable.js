@@ -49,10 +49,9 @@ class Topusage extends React.Component {
 
   render() {
     const cellStyle = {
-      padding: '8px 2px', // Reduced padding
+      padding: '12px 8px', // Reduced padding
       borderBottom: '1px solid #E8E8F7',
       color: '#383874',
-      fontSize: '9px',
     };
 
     const headerCellStyle = {
@@ -64,7 +63,7 @@ class Topusage extends React.Component {
 
     return (
       <div className="p-1">
-        <TableContainer className="h-80">
+        <TableContainer >
           <Table size="small" stickyHeader aria-label="services usage table">
             <TableHead>
               <TableRow>

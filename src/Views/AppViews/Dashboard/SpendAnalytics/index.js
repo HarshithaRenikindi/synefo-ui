@@ -803,100 +803,91 @@ class SpendAnalytics extends Component {
           
         </Box>
 
-      <Box className="spend-analytics-inner-container">
+      <Box className="spend-analytics-inner-container " >
         
       <Dashboard/>
-
-        
-        <Box className="analytics-right">
-          <Box className="current-spend" >
-          <Grid container spacing={1} >
-          
-        </Grid> 
-            <Box className="heading" >
-              <label>Current Spend Rate</label>
-            </Box>
-            <Box sx={{ flexGrow: 2 }}>
-              <Grid container spacing={1} className="spend-time">
-                <Grid className="spend-time-details">
-                  <Box className="user-profile">
-                    <img src={UserIcon} className="red" alt="" style={{width:'25px'}}/>
-                  </Box>
-                  {this.renderCurrentHourSpendRateHtml()}
-               
-                </Grid>
-                <Grid className="spend-time-details">
-                  <Box className="user-profile sky-blue">
-                    <img src={KingIcon} alt=""  style={{width:'25px'}} />
-                  </Box>
-                  {this.renderCurrentDaySpendRateHtml()}
-                </Grid>
-              </Grid>
-            </Box>
-          </Box>
-          <Box className="spend-analytics">
-            <Box className="heading">
-              <label>Spend Analytics</label>
-            </Box>
-            <Grid container spacing={1} className="spend-analytics-time">
-              <Box className="spend-contant">
-                {/* {this.renderTodaySpendAnalyticsHtml()} */}
-                <Box className="heading">
-              <label>Spends Today</label>
-            </Box>
-
-                <Box display="flex" alignItems="center">
-                <Typography
-  className="font-bold"
-  variant="h4"
-  sx={{
-    marginRight: 1,
-    fontSize: '34px',
-    color: '#383874',
-    fontWeight: 'bold', // This makes the text bold
-  }}
->
-  $150
-</Typography>
-
-
-
-      <ArrowDropUpIcon color="success" />
-      <Typography variant="h6" sx={{ marginRight: 1 ,}} style={{ fontSize: '0.75rem'}}>10%</Typography>
-
+      <Box className="analytics-right h-96" sx={{ display: 'flex', justifyContent: 'flex-end'}}>
+  <Box className="spend-analytics" > {/* Adjust maxWidth as needed */}
+  <Box className="current-spend" > {/* Adjust maxWidth as needed */}
+    
+    <Box className="heading">
+      <label>Current Spend Rate</label>
     </Box>
-              </Box>
-              <Box className="spend-contant">
-                {/* {this.renderYesterdaySpendAnalyticsHtml()} */}
-                <Box className="heading">
-              <label>Spends Yesterday</label>
-            </Box>
-                <Box display="flex" alignItems="center">
-      
-                <Typography
-  className="font-bold"
-  variant="h4"
-  sx={{
-    marginRight: 1,
-    fontSize: '34px',
-    color: '#383874',
-    fontWeight: 'bold', // This makes the text bold
-  }}
->
-  $150
-</Typography>
-
-
-      <ArrowDropUpIcon color="success" />
-      <Typography variant="h6" sx={{ marginRight: 1 ,}} style={{ fontSize: '0.75rem'}}>10%</Typography>
-
-    </Box>
-    {/* <ChatBotGreeting/> */}
-              </Box>
-            </Grid>
+    <Box sx={{ flexGrow: 2 }}>
+      <Grid container spacing={1} className="spend-time">
+        <Grid className="spend-time-details">
+          <Box className="user-profile">
+            <img src={UserIcon} className="red" alt="" style={{ width: '25px' }} />
           </Box>
+          {this.renderCurrentHourSpendRateHtml()}
+        </Grid>
+        <Grid className="spend-time-details">
+          <Box className="user-profile sky-blue">
+            <img src={KingIcon} alt="" style={{ width: '25px' }} />
+          </Box>
+          {this.renderCurrentDaySpendRateHtml()}
+        </Grid>
+      </Grid>
+    </Box>
+  </Box>
+  
 
+    <Box className="heading">
+      <label>Spend Analytics</label>
+    </Box>
+    <Grid container spacing={1} className="spend-analytics-time">
+      <Box className="spend-contant">
+        <Box className="heading">
+          <label>Spends Today</label>
         </Box>
+        <Box display="flex" alignItems="center">
+          <Typography
+            className="font-bold"
+            variant="h4"
+            sx={{
+              marginRight: 1,
+              fontSize: '34px',
+              color: '#383874',
+              fontWeight: 'bold',
+            }}
+          >
+            $150
+          </Typography>
+          <ArrowDropUpIcon color="success" />
+          <Typography variant="h6" sx={{ marginRight: 1 }} style={{ fontSize: '0.75rem' }}>
+            10%
+          </Typography>
+        </Box>
+      </Box>
+      <Box className="spend-contant">
+        <Box className="heading">
+          <label>Spends Yesterday</label>
+        </Box>
+        <Box display="flex" alignItems="center">
+          <Typography
+            className="font-bold"
+            variant="h4"
+            sx={{
+              marginRight: 1,
+              fontSize: '34px',
+              color: '#383874',
+              fontWeight: 'bold',
+            }}
+          >
+            $150
+          </Typography>
+          <ArrowDropUpIcon color="success" />
+          <Typography variant="h6" sx={{ marginRight: 1 }} style={{ fontSize: '0.75rem' }}>
+            10%
+          </Typography>
+        </Box>
+      </Box>
+    </Grid>
+  </Box>
+</Box>
+
+
+
        
       </Box>
     </Box>

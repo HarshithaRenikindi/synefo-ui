@@ -79,9 +79,8 @@ export default function RegionWiseResourcesTable() {
   ];
 
   const cellStyle = {
-    padding: '5px 3px',
+    padding: '4px 7px',
     color: '#383874',
-    fontSize: '9px',
 
   };
   
