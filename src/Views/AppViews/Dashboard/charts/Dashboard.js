@@ -33,22 +33,25 @@ import axios from 'axios';
         
           if (showSuccess) {
             return (
+        
               <div className="flex flex-col items-center justify-center h-full">
-                <CheckCircle size={48} className="text-green-500 mb-4" />
-                <p className="text-center text-[#383874] mb-4">Email Sent Successfully</p>
-                <Button 
-                  variant="contained" 
-                  size='small'
-                  onClick={() => {
-                    setShowSuccess(false);
-                    setIsScanned(false);
-                    setTitles([]); // Reset titles
-                    setError('');
-                  }}
-                >
-                  Done
-                </Button>
-              </div>
+  <CheckCircle size={48} className="text-green-500 mb-4" />
+  <p className="text-center text-[#383874] mb-4">Email Sent Successfully</p>
+  <Button 
+    variant="contained"
+    sx={{ backgroundColor: '#384CFF' }} // Changed color here
+    size='small'
+    onClick={() => {
+      setShowSuccess(false);
+      setIsScanned(false);
+      setTitles([]); // Reset titles
+      setError('');
+    }}
+  >
+    Done
+  </Button>
+</div>
+
             );
           }
         
@@ -59,11 +62,12 @@ import axios from 'axios';
                   Security and Compliance Issues
                 </h2>
                 <p style={{ color: '#383874', textAlign: 'left' }}>Click to scan all your security issues</p>
-                <div style={{ marginTop: '35%' }}>
+                <div style={{ marginTop: '40%' }}>
                   <Button 
                     variant="contained" 
+                    
                     size='small'
-                    sx={{ padding: '8px 16px' }}
+                    sx={{ padding: '8px 20px',backgroundColor: '#384CFF'  }}
                     onClick={handleScanNow}
                   >
                     Scan Now
@@ -142,7 +146,7 @@ const Dashboard = () => {
           <h2 className="font-bold mb-4" style={{ color: '#383874', textAlign: 'left' }}>WAFR</h2>
           <WAFRDashboard />
         </div>
-        <div className="bg-white p-4 rounded-lg shadow-md  h-96  w-10/12 ">
+        <div className="bg-white p-4 rounded-lg shadow-md  h-96  w-8/12 ">
           <SecurityScanCard />
         </div>
       </div>
